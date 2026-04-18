@@ -874,8 +874,43 @@ function App() {
       <main id="top">
         <section
           ref={heroRef}
+          data-parallax-section
           className="relative isolate overflow-hidden bg-aurora pt-32 md:pt-36"
         >
+          <div className="hero-ambient">
+            <div
+              data-parallax="52"
+              className="hero-orb hero-orb-one"
+            />
+            <div
+              data-parallax="82"
+              className="hero-orb hero-orb-two"
+            />
+            <div
+              data-parallax="64"
+              className="hero-orb hero-orb-three"
+            />
+            <div
+              data-parallax="46"
+              className="hero-conic hero-conic-one"
+            />
+            <div
+              data-parallax="38"
+              className="hero-conic hero-conic-two"
+            />
+            <div className="hero-grid" />
+            <div className="hero-scanlines" />
+            <div
+              data-parallax="28"
+              className="hero-ring hero-ring-one"
+            />
+            <div
+              data-parallax="22"
+              className="hero-ring hero-ring-two"
+            />
+            <div className="hero-beam hero-beam-left" />
+            <div className="hero-beam hero-beam-right" />
+          </div>
           <div className="pointer-events-none absolute inset-x-0 top-0 h-[52rem] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_40%)]" />
           <div className="pointer-events-none absolute left-[-8rem] top-[8rem] hidden h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(circle,rgba(168,32,255,0.18),transparent_64%)] blur-3xl md:block" />
           <div className="pointer-events-none absolute right-[-9rem] top-[9rem] hidden h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(circle,rgba(176,20,255,0.26),transparent_60%)] blur-3xl lg:block" />

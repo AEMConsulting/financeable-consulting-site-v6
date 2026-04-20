@@ -2,12 +2,15 @@ import type { Page } from '@playwright/test'
 import { devices, expect, test } from '@playwright/test'
 
 const heroHeading =
-  'Senior finance support for businesses that need clearer monthly decisions.'
-const featuresHeading = 'Power up your finance rhythm.'
-const processHeading = /Your path from delayed reporting to live monthly decisions/i
+  'For businesses that need clearer monthly decisions.'
+const featuresHeading =
+  'Three finance support routes, built around the moments growing businesses lose clarity.'
+const processHeading =
+  /Understand your finance setup, build the right routine, and use it to support better decisions/i
 const firstFaqAnswer = /founder-led businesses, growing SMEs, and small leadership teams/i
-const faqQuestion = 'What services does Financeable Consulting offer?'
-const faqAnswer = /The core services are Monthly CFO, Financial Reporting, and Cashflow Management/i
+const faqQuestion = 'What services does Cuno offer?'
+const faqAnswer =
+  /The core services are Senior Finance Support, Management Reporting, and Cashflow Forecasting/i
 const mobileDevice = devices['Pixel 7']
 
 async function openHomepage(page: Page) {
@@ -50,7 +53,7 @@ test('desktop hero and anchor navigation keep key sections reachable', async ({ 
   ).toBeVisible()
   await expect(
     page.getByRole('heading', {
-      name: 'Understand the current finance setup',
+      name: 'Your current setup',
     }),
   ).toBeVisible()
 })
@@ -60,7 +63,7 @@ test('desktop FAQ accordion can switch answers and collapse again', async ({ pag
 
   await page.locator('#faq').scrollIntoViewIfNeeded()
   await page
-    .getByRole('button', { name: 'Who is Financeable Consulting best suited to?' })
+    .getByRole('button', { name: 'Who is Cuno best suited to?' })
     .click()
   await expect(page.getByText(firstFaqAnswer)).toBeVisible()
 
@@ -98,7 +101,7 @@ test.describe('mobile homepage', () => {
 
     await expect(
       page.getByRole('heading', {
-        name: 'Understand the current finance setup',
+        name: 'Your current setup',
       }),
     ).toBeVisible()
 
@@ -108,7 +111,7 @@ test.describe('mobile homepage', () => {
     await nextJourneyButton.click()
     await nextJourneyButton.click()
 
-    const finalStep = page.getByRole('heading', { name: 'Refine the finance layer as the business grows' })
+    const finalStep = page.getByRole('heading', { name: 'Refine your finance as your business grows' })
     await expect(finalStep).toBeVisible()
   })
 })

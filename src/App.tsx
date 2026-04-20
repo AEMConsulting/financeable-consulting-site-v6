@@ -12,7 +12,6 @@ import {
   Menu,
   NotebookTabs,
   Plus,
-  ShieldCheck,
   Wallet,
   X,
   type LucideIcon,
@@ -51,27 +50,27 @@ const navItems = [
 ] as const
 
 const trustChips = [
-  'Monthly CFO',
-  'Financial Reporting',
-  'Cashflow Management',
+  'Senior Finance Support',
+  'Management Reporting',
+  'Cashflow Forecasting',
   'London-focused support',
 ] as const
 
 const heroPoints = [
-  ['Monthly visibility', 'Structured and decision-ready'],
-  ['Cash outlook', 'More useful than a bank-balance guess'],
-  ['Working style', 'Practical, calm, and commercially useful'],
+  ['Numbers', 'Monthly, decision-ready'],
+  ['Cash insight', 'Forward-looking'],
+  ['Support', 'Practical and commercially focused'],
 ] as const
 
 const audienceStrip = [
   'Founder-led businesses',
   'Growing SMEs',
-  'London operators',
-  'Growth-stage teams',
-  'Commercially useful reporting',
-  'Cash visibility',
-  'Monthly CFO support',
-  'No retainer required to start',
+  'Senior finance support',
+  'Management reporting',
+  'Cashflow forecasting',
+  'London-focused support',
+  'Clear monthly decisions',
+  'No commitment upfront',
 ] as const
 
 type FeatureCardData = {
@@ -85,110 +84,83 @@ type FeatureCardData = {
 
 const featureCards: readonly FeatureCardData[] = [
   {
-    tag: 'Monthly CFO',
-    title: 'Monthly CFO rhythm',
+    tag: 'Senior Finance Support',
+    title: 'Clarity, control and strong foundations',
     copy:
-      'Recurring finance leadership that keeps reporting, cash visibility, and leadership discussion in one monthly loop.',
-    bullets: ['Recurring finance cadence', 'Leadership decision support'],
+      'A recurring senior finance model for businesses that need clearer reporting, sharper decision support, and a dependable monthly operating rhythm.',
+    bullets: ['Structured monthly reporting', 'Forward-looking financial insights'],
     icon: Landmark,
     visual: 'routing',
   },
   {
-    tag: 'Reporting',
-    title: 'Management reporting built for decisions',
+    tag: 'Management Reporting',
+    title: 'Transforming your numbers into clear, decision-ready insight',
     copy:
-      'Clearer management accounts, sharper commentary, and budget-versus-actual visibility leaders can actually use.',
-    bullets: ['Management accounts', 'Decision-ready commentary'],
+      'Clear, accurate monthly reporting with focused commentary that leadership can use to make confident decisions.',
+    bullets: ['Structured monthly management accounts', 'Variance analysis with clear explanations'],
     icon: NotebookTabs,
     visual: 'cadence',
   },
   {
-    tag: 'Cashflow',
-    title: 'Cash visibility before pressure builds',
+    tag: 'Cashflow Forecasting',
+    title: 'Forward cash visibility before pressure turns into risk',
     copy:
-      'Rolling cash forecasting and planning cadence give the business a clearer view of liquidity and near-term choices.',
-    bullets: ['Rolling cash forecast', 'Near-term visibility'],
+      'Rolling cash forecasting, structured planning cadence, and practical support give you a reliable view of liquidity and what is ahead.',
+    bullets: ['Rolling cashflow forecast', 'Forward-looking decision support'],
     icon: Wallet,
     visual: 'speed',
-  },
-  {
-    tag: 'Forecasting',
-    title: 'Forecast reviews that stay close to reality',
-    copy:
-      'Connect budgets, forecast movement, and changing assumptions to the decisions that matter each month.',
-    bullets: ['Forecast refresh', 'Growth-stage planning'],
-    icon: LineChart,
-    visual: 'analytics',
-  },
-  {
-    tag: 'Cadence',
-    title: 'A monthly review rhythm leadership will keep',
-    copy:
-      'Turn reporting into a dependable management cadence instead of a finance file nobody trusts after month-end.',
-    bullets: ['Monthly review agenda', 'Clear ownership'],
-    icon: CalendarClock,
-    visual: 'booking',
-  },
-  {
-    tag: 'Decision support',
-    title: 'Calm commercial guidance without advisory theatre',
-    copy:
-      'Practical finance support for businesses that need clearer monthly control before a full-time senior hire makes sense.',
-    bullets: ['Low-friction start', 'No invented proof'],
-    icon: ShieldCheck,
-    visual: 'local',
   },
 ] as const
 
 const quantifiedCards = [
   {
-    value: '3',
-    label: 'Core finance support routes built around the moments growing businesses lose clarity.',
+    value: 'Core',
+    label: 'Three core services built around the support businesses need as they scale.',
   },
   {
-    value: '£0',
-    label: 'No setup or retainer commitment required to start a conversation.',
+    value: 'Structured',
+    label: 'Consistent operating cadence that brings clarity, not reactive firefighting.',
   },
   {
-    value: 'Monthly',
-    label: 'A practical operating cadence instead of ad hoc finance admin.',
+    value: 'Flexible',
+    label: 'No commitment upfront. We start with a conversation.',
   },
   {
     value: 'London',
-    label: 'Primary market focus, with support extending to selected UK growth hubs.',
+    label: 'Primary market focus, supporting London-based businesses with reach across selected UK growth hubs.',
   },
 ] as const
 
 const processSteps = [
   {
     number: '01',
-    title: 'Understand the current finance setup',
+    title: 'Your current setup',
     copy:
-      'Review how reporting, forecasting, and decision ownership work today, and identify where clarity is being lost.',
+      'Identify where clarity is being lost through a full review of your current finance setup.',
   },
   {
     number: '02',
-    title: 'Build a practical monthly rhythm',
+    title: 'The build',
     copy:
-      'Create a reporting and review cadence leadership can actually use rather than another finance document nobody trusts.',
+      'Establish a structured reporting and review cadence, tailored to how your business operates and grows.',
   },
   {
     number: '03',
-    title: 'Improve interpretation and control',
+    title: 'Improve control',
     copy:
-      'Connect management numbers, budget movement, and cash visibility to the decisions that matter most.',
+      'Tighten visibility across reporting, planning, and cash so finance is easier to manage and act on.',
   },
   {
     number: '04',
-    title: 'Support better monthly decisions',
+    title: 'Stronger support',
     copy:
-      'Use finance as a management tool for hiring, growth pacing, pricing, spend control, and short-term priorities.',
+      'Use finance as a guide for short-term priorities and long-term direction.',
   },
   {
     number: '05',
-    title: 'Refine the finance layer as the business grows',
+    title: 'Refine your finance as your business grows',
     copy:
-      'Tighten the reporting pack, refresh the forecast, and keep the monthly cadence aligned with the next stage of complexity.',
+      'Ensure your reporting and forecasts evolve with the business rather than lag behind it.',
   },
 ] as const
 
@@ -196,134 +168,105 @@ const benefitSlides = [
   {
     title: 'More than reporting, less than a full-time senior finance hire',
     copy:
-      'Financeable fits the stage where the business needs recurring senior finance input but is not ready for a permanent CFO appointment.',
-    impact: 'Impact: monthly clarity before a full-time senior hire is justified.',
+      'Built for businesses that need recurring senior finance input, but are not ready for a full-time CFO.',
+    impact: 'Impact: clear monthly visibility before a full-time hire is needed.',
     image: media.illustrations[0],
   },
   {
     title: 'Decision-ready reporting instead of delayed monthly admin',
     copy:
-      'Management reporting is shaped around decisions, commentary, and budget movement rather than a historic pack sent after the moment has passed.',
-    impact: 'Impact: leaders work from a clearer current picture.',
+      'Management reporting is built around relevant and timely information, not historic packs sent after the moment has passed.',
+    impact: 'Impact: leaders work from a clear, current view.',
     image: media.illustrations[1],
   },
   {
     title: 'Forward cash visibility before pressure turns into risk',
     copy:
-      'Cash planning is handled as a live management issue, not a last-minute bank balance check when commitments are already in motion.',
-    impact: 'Impact: fewer surprises around liquidity and timing.',
+      'Cash is managed as a live business issue, not a last-minute bank balance check.',
+    impact: 'Impact: fewer surprises around cash and timing.',
     image: media.illustrations[2],
   },
   {
     title: 'A monthly review cadence leadership will actually use',
     copy:
-      'The service is built around rhythm and usefulness, so the finance layer becomes easier to manage each month.',
-    impact: 'Impact: finance discussion becomes recurring, calmer, and more actionable.',
+      'Finance runs on a structured monthly rhythm, making it easier to manage and act on each cycle.',
+    impact: 'Impact: finance discussions become regular, calmer, and more actionable.',
     image: media.illustrations[3],
-  },
-  {
-    title: 'Trust built through specificity, not inflated proof',
-    copy:
-      'No fake reviews, inflated credentials, or generic advisory claims. The service is positioned around process clarity and realistic expectations.',
-    impact: 'Impact: a clearer enquiry route for serious businesses.',
-    image: media.illustrations[4],
-  },
-  {
-    title: 'London-led support with room for selected UK growth hubs',
-    copy:
-      'The service is rooted in London-focused support for founder-led businesses and growing SMEs, with scope beyond London where the fit is right.',
-    impact: 'Impact: local relevance without narrowing the service to one postcode.',
-    image: media.illustrations[5],
   },
 ] as const
 
 const caseStudies = [
   {
-    tags: ['Founder-led', 'Monthly CFO', 'London'],
-    title: 'Reporting that arrives in time to guide decisions',
+    tags: ['Founder-led', 'Monthly Senior Finance Support', 'London'],
+    title: 'Timely, relevant reporting',
     challenge:
-      'Leadership keeps moving, but the financial picture lands after decisions have already been made.',
+      'Reporting arrives late, with limited visibility for planning and decision-making. Everything starts to feel like guesswork.',
     focus:
-      'Monthly CFO support tightens the reporting pack, the management commentary, and the recurring monthly review rhythm.',
+      'Monthly senior finance support tightens the reporting pack and introduces a consistent monthly review rhythm.',
     change:
-      'Leadership gets a decision-ready monthly picture rather than a backward-looking admin document.',
+      'A clear, decision-ready monthly picture instead of a backward-looking admin document.',
     stats: [
       ['Monthly', 'Decision-ready reporting'],
-      ['Budget', 'Variance context'],
-      ['Leadership', 'A clearer review cadence'],
+      ['Leadership Focus', 'Commercially useful support'],
+      ['Clarity', 'Sharper monthly control'],
     ],
     principleTitle: 'No fake proof layer',
     principleCopy:
-      'Trust is built through specific services, clear process, and realistic expectations rather than fabricated reviews or inflated metrics.',
+      'Trust is built through clear services, defined process, and realistic expectations, not fabricated reviews or inflated claims.',
   },
   {
     tags: ['Growth-stage', 'Cashflow', 'Planning'],
     title: 'Cash visibility before pressure becomes risk',
     challenge:
-      'Even profitable businesses can feel exposed when receipts, spend, and growth commitments are not visible in one clear rhythm.',
+      'When receipts, spend, and commitments are not clearly tracked, cash risk becomes harder to control.',
     focus:
-      'Cashflow Management builds a rolling forecast and a practical decision cadence around receipts, spend, and near-term commitments.',
+      'Cashflow management builds a rolling forecast and a practical decision cadence around cash inflows and outflows.',
     change:
-      'Cash becomes a forward-looking management discussion instead of a late-stage surprise.',
+      'Cash becomes a forward-looking management discussion, not a late-stage surprise.',
     stats: [
-      ['Cash', 'Forward visibility'],
-      ['Planning', 'Rolling forecast'],
-      ['Decisions', 'Near-term control'],
+      ['Cash Control', 'Forward visibility'],
+      ['Planning', 'Efficient planning'],
+      ['Decisions', 'Confident decisions'],
     ],
     principleTitle: 'A commercially useful finance lens',
     principleCopy:
-      'The emphasis stays on management visibility, budget-versus-actual understanding, and cash planning that supports action.',
+      'The focus stays on cash visibility and forward planning that supports action and business priorities.',
   },
   {
-    tags: ['SME', 'Reporting', 'Leadership'],
-    title: 'Finance support once the business has outgrown informal handling',
+    tags: ['Management', 'Reporting', 'Leadership'],
+    title: 'Management reporting for businesses that have outgrown informal finance',
     challenge:
       'Bookkeeping and year-end compliance may exist, but the leadership team still lacks dependable monthly finance support.',
     focus:
-      'Financeable sits alongside the current accountant or bookkeeper and adds leadership-level structure, interpretation, and management rhythm.',
+      'Cuno works alongside your team to add structure, interpretation, and a consistent management rhythm.',
     change:
-      'The finance function becomes easier to manage before a full-time senior finance hire is justified.',
+      'Finance becomes easier to manage, information becomes useful, and performance insight supports better decisions.',
     stats: [
-      ['Support', 'Senior finance layer'],
-      ['Cadence', 'Recurring monthly structure'],
-      ['Setup', 'Low-friction start'],
+      ['Value Add', 'Sharper finance support'],
+      ['Planning', 'Forward planning'],
+      ['Growth', 'Growth-driven structure'],
     ],
     principleTitle: 'Built for later growth',
     principleCopy:
-      'The live site is positioned as the core brand layer, with service specificity and later expansion in mind instead of overclaiming too early.',
+      'Designed to support the next stage of the business, with structure and clarity that scales as complexity increases.',
   },
 ] as const
 
 const faqItems = [
   {
-    question: 'Who is Financeable Consulting best suited to?',
+    question: 'Who is Cuno best suited to?',
     answer:
       'Founder-led businesses, growing SMEs, and small leadership teams that need stronger reporting, cash visibility, and practical finance support without hiring a full-time senior leader too early.',
   },
   {
-    question: 'What services does Financeable Consulting offer?',
+    question: 'What services does Cuno offer?',
     answer:
-      'The core services are Monthly CFO, Financial Reporting, and Cashflow Management. Together they cover recurring finance leadership, better monthly visibility, and stronger control over planning and liquidity.',
+      'The core services are Senior Finance Support, Management Reporting, and Cashflow Forecasting. Together they cover recurring finance leadership, better monthly visibility, and stronger control over planning and liquidity.',
   },
   {
-    question: 'What is Monthly CFO support in practice?',
-    answer:
-      'It combines recurring finance leadership, management discussion, reporting review, and practical decision support for businesses that need more than reporting and less than a full-time senior finance hire.',
-  },
-  {
-    question: 'Does this replace our current accountant or bookkeeper?',
+    question: 'Does this replace our current accountant?',
     answer:
       'Not necessarily. The support can sit alongside an existing accountant, bookkeeper, or finance manager to add structure, interpretation, and decision support.',
-  },
-  {
-    question: 'Do we need to commit to a retainer before a first conversation?',
-    answer:
-      'No. There is no retainer commitment required to start a conversation. The first step is exploratory and focused on where clarity is currently being lost.',
-  },
-  {
-    question: 'How do we start?',
-    answer:
-      'The first step is a consultation to understand how reporting, cash planning, and finance decisions are working today and where more clarity is needed.',
   },
   {
     question: 'Is the service only for businesses in trouble?',
@@ -331,24 +274,9 @@ const faqItems = [
       'No. It is often most useful when a business is growing, hiring, or managing more complexity than the current finance setup can handle comfortably.',
   },
   {
-    question: 'Is the support London only?',
+    question: 'How do we start?',
     answer:
-      'The primary focus is London and its key business districts, with support extending to selected UK growth markets where the fit is right.',
-  },
-  {
-    question: 'How often does the finance rhythm run?',
-    answer:
-      'The default emphasis is monthly: reporting, review, management interpretation, and cash visibility tied to a recurring operating cadence.',
-  },
-  {
-    question: 'Can we start with one finance pain point rather than a full package?',
-    answer:
-      'Yes. Businesses often start with the issue that feels most urgent, such as delayed reporting, weak cash visibility, or the need for recurring monthly finance leadership.',
-  },
-  {
-    question: 'Are public reviews available?',
-    answer:
-      'No safely attributable public Google reviews were found during research, so the site uses service clarity and process detail instead of a fabricated review section.',
+      'The first step is a consultation to understand how reporting, cash planning, and finance decisions are working today and where more clarity is needed.',
   },
 ] as const
 
@@ -772,7 +700,7 @@ function App() {
         <header className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4 md:px-10">
           <a href="#top" className="flex items-center gap-3">
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-[linear-gradient(145deg,#20002d,#a30df5)] text-sm font-semibold text-white shadow-glow">
-              FC
+              CU
             </div>
             <div>
               <div
@@ -780,11 +708,9 @@ function App() {
                   isHeaderSolid ? 'text-[#6e2794]' : 'text-lilac'
                 }`}
               >
-                Financeable
+                Cuno
               </div>
-              <div className={`text-xs ${isHeaderSolid ? 'text-[#6a5a7b]' : 'text-muted'}`}>
-                Consulting
-              </div>
+              <div className={`text-xs ${isHeaderSolid ? 'text-[#6a5a7b]' : 'text-muted'}`}>Senior finance support</div>
             </div>
           </a>
 
@@ -802,7 +728,7 @@ function App() {
 
           <div className="hidden items-center gap-3 md:flex">
             <a href="#benefits" className={isHeaderSolid ? darkButton : lightButton}>
-              Why Financeable
+              Why Cuno
             </a>
             <a href="#contact" className={darkButton}>
               Book a consultation
@@ -844,9 +770,9 @@ function App() {
               <div className="flex items-center justify-between">
                 <div>
                   <div className="font-display text-sm uppercase tracking-[0.3em] text-lilac">
-                    Financeable
+                    Cuno
                   </div>
-                  <div className="text-sm text-muted">Consulting</div>
+                  <div className="text-sm text-muted">Senior finance support</div>
                 </div>
                 <button
                   type="button"
@@ -883,7 +809,7 @@ function App() {
                   }}
                   className={lightButton}
                 >
-                  Why Financeable
+                  Why Cuno
                 </a>
                 <a
                   href="#contact"
@@ -988,15 +914,14 @@ function App() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <SectionPill>London Finance Support</SectionPill>
+                <SectionPill>Senior Finance Support</SectionPill>
               </motion.div>
 
               <h1
                 ref={heroTitleRef}
                 className="mt-7 max-w-5xl font-display text-[3.2rem] font-semibold leading-[0.97] tracking-[-0.055em] text-ink md:text-[4.8rem] xl:text-[5.55rem]"
               >
-                Senior finance support for businesses that need clearer monthly
-                decisions.
+                For businesses that need clearer monthly decisions.
               </h1>
 
               <motion.p
@@ -1005,11 +930,10 @@ function App() {
                 transition={{ duration: 0.6, delay: 0.18 }}
                 className="mt-8 max-w-2xl text-lg leading-8 text-muted md:text-xl"
               >
-                Financeable Consulting helps founder-led businesses and growing teams
-                bring order to reporting, cash visibility, and finance leadership.
-                The focus is practical: clearer monthly numbers, stronger decision
-                support, and a better operating rhythm without the cost of a full-time
-                finance director or CFO too early.
+                Cuno helps founder-led businesses and growing teams bring order to
+                reporting, cash visibility, and finance leadership. Clear numbers.
+                Better decisions. Stronger operating rhythm, without a full-time CFO
+                hire too early.
               </motion.p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -1058,13 +982,13 @@ function App() {
                 <div className="absolute right-0 top-0 h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.18),transparent_65%)] blur-2xl" />
                 <div className="relative">
                   <div className="text-sm uppercase tracking-[0.28em] text-lilac">
-                    Start with a brief
+                    Let&apos;s talk
                   </div>
                   <h2 className="mt-5 max-w-md font-display text-4xl font-medium tracking-[-0.04em] text-ink">
                     Book a consultation
                   </h2>
                   <p className="mt-4 max-w-md text-sm leading-7 text-muted">
-                    Share the finance challenge that feels hardest to manage right now.
+                    Share your current set-up and we&apos;ll take it from there.
                   </p>
 
                   <form
@@ -1081,7 +1005,7 @@ function App() {
                           {label === 'What do you need support with?' ? (
                             <textarea
                               className="min-h-28 rounded-[20px] border border-white/10 bg-white/5 px-4 py-3 text-sm text-ink outline-none transition placeholder:text-muted/60 focus:border-lilac/60 focus:bg-white/[0.07]"
-                              placeholder="Tell us where reporting, cash visibility, or decision support is falling short."
+                              placeholder="Outline your current set-up and where clarity feels missing."
                             />
                           ) : (
                             <input
@@ -1136,15 +1060,15 @@ function App() {
                 data-reveal
                 className="mt-6 font-display text-4xl font-medium tracking-[-0.05em] md:text-6xl"
               >
-                Power up your finance rhythm.
+                Three finance support routes, built around the moments growing businesses lose clarity.
               </h2>
               <p
                 data-reveal
                 className="mx-auto mt-6 max-w-2xl text-base leading-8 text-[#5a4c6b] md:text-lg"
               >
-                Three finance support routes, built around the moments growing businesses
-                lose clarity, expanded into the operating capabilities leadership teams
-                need each month.
+                Senior finance support, management reporting, and cashflow forecasting
+                give leadership clearer monthly control without forcing an early
+                full-time hire.
               </p>
             </div>
 
@@ -1203,13 +1127,10 @@ function App() {
           <div className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-[radial-gradient(circle_at_top,rgba(127,52,164,0.11),transparent_60%)]" />
           <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
             <div className="mx-auto max-w-3xl text-center">
-              <SectionPill theme="light">Key stats</SectionPill>
+              <SectionPill theme="light">Stats bar</SectionPill>
               <div data-reveal className="relative mt-6">
-                <div className="font-display text-[12vw] leading-none tracking-[-0.08em] text-[#f1e5fb] md:text-[7rem]">
-                  The Finance Layer,
-                </div>
-                <h2 className="relative -mt-2 font-display text-4xl font-medium tracking-[-0.05em] md:-mt-7 md:text-7xl">
-                  Quantified
+                <h2 className="relative font-display text-4xl font-medium tracking-[-0.05em] md:text-7xl">
+                  Core services, structured cadence, flexible start, and London focus.
                 </h2>
               </div>
             </div>
@@ -1313,15 +1234,12 @@ function App() {
               <div className="relative max-w-xl">
                 <SectionPill>How it works</SectionPill>
                 <h2 className="mt-6 font-display text-4xl font-medium tracking-[-0.05em] text-white md:text-6xl">
-                  Your path from delayed reporting to
-                  <span className="bg-[linear-gradient(180deg,#ffffff,#d7a8ff)] bg-clip-text text-transparent">
-                    {' '}
-                    live monthly decisions
-                  </span>
+                  Understand your finance setup, build the right routine, and use it to
+                  support better decisions.
                 </h2>
                 <p className="mt-6 max-w-xl text-base leading-8 text-[#c5b9d3] md:text-lg">
-                  Understand the finance setup, build the right cadence, and use it to
-                  support better decisions.
+                  Cuno reviews what is happening now, builds the right monthly routine,
+                  and helps finance become easier to manage as the business grows.
                 </p>
               </div>
 
@@ -1355,13 +1273,13 @@ function App() {
                     <article className="gradient-outline relative min-h-[21rem] overflow-hidden rounded-[30px] bg-[linear-gradient(180deg,rgba(40,27,51,0.92),rgba(21,13,30,0.96))] p-7 backdrop-blur-xl">
                       <SectionPill>Ready to start</SectionPill>
                       <h3 className="mt-6 font-display text-3xl font-medium tracking-[-0.04em] text-white">
-                        Ready for clearer monthly decisions, and less reactive finance
-                        work?
+                        Ready for clear monthly numbers, better decisions, and a more
+                        controlled finance function?
                       </h3>
                       <p className="mt-5 text-sm leading-7 text-[#c8bdd6]">
-                        Financeable helps founder-led businesses and growing teams build a
-                        dependable monthly finance rhythm without forcing an early
-                        full-time hire.
+                        Cuno helps founder-led businesses and growing teams build a more
+                        controlled finance function without forcing an early full-time
+                        hire.
                       </p>
                       <a href="#contact" className={`${darkButton} mt-8`}>
                         Book a consultation
@@ -1395,15 +1313,12 @@ function App() {
             <div className="w-[28rem] shrink-0">
               <SectionPill>How it works</SectionPill>
               <h2 className="mt-6 max-w-[24rem] font-display text-[4.2rem] font-medium leading-[0.96] tracking-[-0.055em] text-white">
-                Your path from delayed reporting to
-                <span className="bg-[linear-gradient(180deg,#ffffff,#d8a9ff)] bg-clip-text text-transparent">
-                  {' '}
-                  live monthly decisions
-                </span>
+                Understand your finance setup, build the right routine, and use it to
+                support better decisions.
               </h2>
               <p className="mt-6 max-w-[28rem] text-lg leading-8 text-[#c5b9d3]">
-                Understand the finance setup, build the right cadence, and use it to
-                support better decisions.
+                Cuno reviews what is happening now, builds the right monthly routine,
+                and helps finance become easier to manage as the business grows.
               </p>
             </div>
 
@@ -1427,16 +1342,52 @@ function App() {
             <article className="gradient-outline relative w-[28rem] shrink-0 overflow-hidden rounded-[34px] bg-[linear-gradient(180deg,rgba(42,28,52,0.9),rgba(23,14,32,0.94))] p-8 backdrop-blur-xl">
               <SectionPill>Ready to start</SectionPill>
               <h3 className="mt-6 max-w-[22rem] font-display text-[2.6rem] font-medium leading-tight tracking-[-0.045em] text-white">
-                Ready for clearer monthly decisions, and less reactive finance work?
+                Ready for clear monthly numbers, better decisions, and a more controlled finance function?
               </h3>
               <p className="mt-5 max-w-[23rem] text-base leading-8 text-[#c8bdd6]">
-                Financeable helps growing businesses improve monthly visibility through
-                Monthly CFO, Financial Reporting, and Cashflow Management support.
+                Cuno helps growing businesses improve monthly visibility through Senior
+                Finance Support, Management Reporting, and Cashflow Forecasting.
               </p>
               <a href="#contact" className={`${darkButton} mt-8`}>
                 Book a consultation
                 <ArrowRight className="h-4 w-4" />
               </a>
+            </article>
+          </div>
+        </section>
+
+        <section className="bg-[#fbf8fe] py-24 text-[#13071d] md:py-32">
+          <div className="mx-auto grid w-full max-w-7xl gap-6 px-6 md:px-10 lg:grid-cols-2">
+            <article
+              data-reveal
+              className="rounded-[34px] border border-[#eadcf5] bg-white p-8 shadow-[0_24px_70px_rgba(97,31,146,0.08)] md:p-10"
+            >
+              <SectionPill theme="light">About Cuno</SectionPill>
+              <h2 className="mt-6 font-display text-4xl font-medium tracking-[-0.05em] md:text-5xl">
+                Cuno is built around useful monthly control.
+              </h2>
+              <p className="mt-6 text-base leading-8 text-[#5a4c6b] md:text-lg">
+                Cuno is positioned as a practical senior finance partner for
+                founder-led businesses, startups, and growing SMEs that need clearer
+                monthly control. The approach is designed to fit before a full-time
+                senior finance hire is justified.
+              </p>
+            </article>
+
+            <article
+              data-reveal
+              className="rounded-[34px] border border-[#eadcf5] bg-white p-8 shadow-[0_24px_70px_rgba(97,31,146,0.08)] md:p-10"
+            >
+              <SectionPill theme="light">Why Cuno</SectionPill>
+              <h2 className="mt-6 font-display text-4xl font-medium tracking-[-0.05em] md:text-5xl">
+                Commercially useful finance layer for founders and start-ups.
+              </h2>
+              <ul className="mt-6 grid gap-4 text-base leading-8 text-[#5a4c6b]">
+                <li>Built around financial clarity, not generic advisory language</li>
+                <li>Designed for businesses that are too complex for informal finance, but too early for a full-time senior hire</li>
+                <li>Focused on decision usefulness, not just historic reporting</li>
+                <li>Low-friction entry point</li>
+              </ul>
             </article>
           </div>
         </section>
@@ -1453,20 +1404,20 @@ function App() {
           <div className="mx-auto w-full max-w-7xl px-6 md:px-10">
             <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
               <div className="max-w-2xl">
-                <SectionPill>Why choose Financeable?</SectionPill>
+                <SectionPill>Why Cuno</SectionPill>
                 <h2
                   data-reveal
                   className="mt-6 font-display text-4xl font-medium tracking-[-0.05em] text-white md:text-6xl"
                 >
-                  A calm, commercially useful finance layer for growth-stage decisions.
+                  More than reporting, less than a full-time senior finance hire.
                 </h2>
               </div>
 
               <div className="max-w-xl">
                 <p data-reveal className="text-base leading-8 text-[#c7bbd4] md:text-lg">
-                  Financeable is built around finance clarity, not generic advisory
-                  language. The emphasis stays on decision usefulness, low-friction
-                  enquiry, and monthly structures leadership can actually use.
+                  The service is built around recurring senior finance input, clearer
+                  reporting, forward cash visibility, and a monthly rhythm leadership
+                  will actually use.
                 </p>
                 <a href="#contact" className={`${darkButton} mt-6`}>
                   Book a consultation
@@ -1553,7 +1504,7 @@ function App() {
                 data-reveal
                 className="mt-6 font-display text-4xl font-medium tracking-[-0.05em] text-white md:text-6xl"
               >
-                Finance support that becomes operating control.
+                Finance support that delivers operating control.
               </h2>
             </div>
 
@@ -1663,19 +1614,20 @@ function App() {
 
             <div className="order-1 lg:order-2">
               <h2 className="max-w-xl font-display text-4xl font-medium leading-tight tracking-[-0.05em] text-white md:text-6xl">
-                Stop losing clarity. Make monthly decisions clearer,
+                Monthly senior finance support that connects reporting, cash visibility,
                 <span className="bg-[linear-gradient(180deg,#ffffff,#f3d8ff)] bg-clip-text text-transparent">
                   {' '}
-                  faster, smarter.
+                  and leadership decisions.
                 </span>
               </h2>
               <p className="mt-6 max-w-xl text-base leading-8 text-white/80 md:text-lg">
-                If reporting arrives too late or cash feels harder to read than it
-                should, Financeable Consulting can build the monthly finance rhythm
-                leadership has been missing.
+                This is the clearest entry point for businesses that need more than
+                reporting and less than a full-time senior finance hire. Cuno combines
+                recurring finance leadership, management discussion, reporting review,
+                and practical decision support.
               </p>
               <a href="#contact" className="glass-cta mt-8 inline-flex items-center gap-3">
-                <span className="px-1">Book a consultation</span>
+                <span className="px-1">Explore your senior finance support</span>
                 <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#b600ff] text-white">
                   <ArrowRight className="h-5 w-5" />
                 </span>
@@ -1749,16 +1701,15 @@ function App() {
               data-reveal
               className="mt-6 max-w-4xl font-display text-4xl font-medium tracking-[-0.05em] text-white md:text-6xl"
             >
-              Ready to stop guessing each month?
+              Make the finance function easier to manage each month.
             </h2>
             <p
               data-reveal
               className="mt-6 max-w-3xl text-base leading-8 text-[#c9bfd6] md:text-lg"
             >
-              Financeable Consulting helps growing businesses improve monthly finance
-              visibility through Monthly CFO, Financial Reporting, and Cashflow
-              Management support. The first conversation is exploratory, practical, and
-              does not require a retainer commitment.
+              If reporting is delayed, cash visibility is weak, or finance decisions
+              still rely too much on instinct, Cuno can help build a clearer monthly
+              rhythm.
             </p>
 
             <div className="mt-10 flex flex-wrap justify-center gap-4">
@@ -1790,12 +1741,11 @@ function App() {
         <div className="mx-auto grid w-full max-w-7xl gap-10 px-6 md:grid-cols-[1fr_auto_auto] md:px-10">
           <div>
             <div className="font-display text-sm uppercase tracking-[0.32em] text-lilac">
-              Financeable Consulting
+              Cuno
             </div>
             <p className="mt-4 max-w-xl text-sm leading-7 text-muted">
-              Financeable Consulting helps growing businesses improve monthly finance
-              visibility through Monthly CFO, Financial Reporting, and Cashflow
-              Management support.
+              Cuno helps growing businesses improve monthly finance visibility through
+              Senior Finance Support, Management Reporting, and Cashflow Forecasting.
             </p>
             <p className="mt-3 text-sm text-muted">
               London-focused support for founder-led businesses, SMEs, and selected UK

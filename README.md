@@ -1,6 +1,8 @@
-# Financeable Consulting Homepage
+# Cuno Homepage
 
-This repository contains a GitHub Pages-ready React/Vite build for the Financeable Consulting homepage, rebuilt with the motion language and section rhythm of the referenced Voxr site while using Financeable's business copy and positioning.
+This repository contains a GitHub Pages-ready React/Vite build for the Cuno homepage.
+
+The canonical homepage copy source now lives in `workspace/05_content/drafts/homepage-live-copy.md`, and the live implementation is in `src/App.tsx`.
 
 ## Stack
 

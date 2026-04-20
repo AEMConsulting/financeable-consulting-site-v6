@@ -1,5 +1,11 @@
 .v5-theme {
   background: #081522;
+  --v5-mouse-x: 46%;
+  --v5-mouse-y: 24%;
+  --v5-mouse-accent-x: 78%;
+  --v5-mouse-accent-y: 72%;
+  --v5-mouse-shift-x: 0px;
+  --v5-mouse-shift-y: 0px;
 }
 
 .v5-theme main,
@@ -46,9 +52,16 @@
 
 .v5-theme .bg-aurora {
   background-image:
+    radial-gradient(circle at var(--v5-mouse-x) var(--v5-mouse-y), rgba(140, 243, 230, 0.16), transparent 18%),
+    radial-gradient(circle at var(--v5-mouse-accent-x) var(--v5-mouse-accent-y), rgba(82, 150, 186, 0.14), transparent 22%),
     radial-gradient(circle at 18% 12%, rgba(124, 231, 215, 0.14), transparent 28%),
     radial-gradient(circle at 56% 0%, rgba(255, 255, 255, 0.04), transparent 20%),
     linear-gradient(108deg, #1a3449 0%, #11273a 44%, #091624 100%) !important;
+}
+
+.v5-theme .hero-ambient {
+  transform: translate3d(calc(var(--v5-mouse-shift-x) * 0.12), calc(var(--v5-mouse-shift-y) * 0.12), 0);
+  transition: transform 220ms ease-out;
 }
 
 .v5-theme .bg-aurora::before,
@@ -147,6 +160,8 @@
   background-image:
     linear-gradient(rgba(124, 231, 215, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(124, 231, 215, 0.06) 1px, transparent 1px);
+  transform: translate3d(calc(var(--v5-mouse-shift-x) * -0.08), calc(var(--v5-mouse-shift-y) * -0.08), 0);
+  transition: transform 260ms ease-out;
 }
 
 .v5-theme .hero-scanlines {
@@ -193,10 +208,19 @@
 
 .v5-theme .hero-beam-left {
   background: linear-gradient(135deg, rgba(214, 246, 241, 0.12), rgba(79, 170, 189, 0)) !important;
+  transform: translate3d(calc(var(--v5-mouse-shift-x) * -0.11), calc(var(--v5-mouse-shift-y) * -0.08), 0);
+  transition: transform 240ms ease-out;
 }
 
 .v5-theme .hero-beam-right {
   background: linear-gradient(180deg, rgba(139, 205, 214, 0.16), rgba(62, 135, 160, 0)) !important;
+  transform: translate3d(calc(var(--v5-mouse-shift-x) * 0.12), calc(var(--v5-mouse-shift-y) * 0.08), 0);
+  transition: transform 240ms ease-out;
+}
+
+.v5-theme [data-hero-art] {
+  filter: hue-rotate(160deg) saturate(0.34) brightness(0.86) !important;
+  opacity: 0.42 !important;
 }
 
 .v5-theme .hero-copy-grid {
@@ -242,9 +266,10 @@
 }
 
 .v5-theme .fixed.inset-x-0.top-0.z-50 {
-  border-color: rgba(255, 255, 255, 0.08) !important;
-  background: rgba(8, 21, 34, 0.78) !important;
-  box-shadow: 0 18px 40px rgba(4, 10, 17, 0.24) !important;
+  border-color: rgba(202, 238, 235, 0.08) !important;
+  background:
+    linear-gradient(180deg, rgba(8, 21, 34, 0.72), rgba(8, 21, 34, 0.6)) !important;
+  box-shadow: 0 18px 40px rgba(4, 10, 17, 0.18) !important;
 }
 
 .v5-theme .bg-\[\#09020f\]\/80 {
@@ -410,14 +435,62 @@
     0 24px 60px rgba(6, 15, 25, 0.24) !important;
 }
 
+.v5-theme .v5-brand-icon {
+  display: none !important;
+}
+
+.v5-theme .v5-brand-text {
+  display: flex;
+  align-items: center;
+}
+
+.v5-theme .v5-brand-text > div:first-child,
+.v5-theme .v5-mobile-brand-title {
+  color: #eef8f7 !important;
+  font-size: 1.08rem !important;
+  font-weight: 600;
+  letter-spacing: -0.035em !important;
+  text-transform: none !important;
+}
+
+.v5-theme .v5-brand-text > div:last-child,
+.v5-theme .v5-mobile-brand-title + div:empty {
+  display: none !important;
+}
+
 .v5-theme #features,
 .v5-theme #benefits,
 .v5-theme #faq {
+  position: relative;
+  overflow: hidden;
   background-image:
+    radial-gradient(circle at 14% 18%, rgba(11, 37, 56, 0.18), transparent 24%),
+    radial-gradient(circle at 82% 78%, rgba(36, 110, 116, 0.12), transparent 28%),
     radial-gradient(circle at 14% 0%, rgba(124, 231, 215, 0.18), transparent 28%),
     radial-gradient(circle at 86% 100%, rgba(16, 40, 60, 0.08), transparent 30%),
     linear-gradient(180deg, #edf7f8 0%, #dce9ef 100%) !important;
   color: #10283c !important;
+}
+
+.v5-theme #features > *,
+.v5-theme #benefits > *,
+.v5-theme #faq > * {
+  position: relative;
+  z-index: 1;
+}
+
+.v5-theme #features::before,
+.v5-theme #benefits::before,
+.v5-theme #faq::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(13, 39, 58, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13, 39, 58, 0.032) 1px, transparent 1px);
+  background-size: 112px 112px;
+  opacity: 0.34;
 }
 
 .v5-theme #features .text-ink,
@@ -452,10 +525,55 @@
   box-shadow: 0 24px 64px rgba(8, 21, 34, 0.08) !important;
 }
 
+.v5-theme #features .rounded-pill,
+.v5-theme #faq .rounded-pill {
+  background: rgba(15, 39, 58, 0.12) !important;
+  border-color: rgba(52, 108, 118, 0.14) !important;
+  color: #1d5c66 !important;
+}
+
 .v5-theme #features .feature-card > :first-child {
   background: linear-gradient(180deg, #dff0f1, #c9dee4) !important;
   border-color: rgba(102, 129, 148, 0.14) !important;
   filter: none;
+}
+
+.v5-theme #features .v5-feature-card {
+  padding: 1.3rem !important;
+}
+
+.v5-theme #features .v5-feature-card > :first-child {
+  height: 8.75rem !important;
+  border-radius: 22px !important;
+}
+
+.v5-theme #features .v5-feature-card .mt-6.text-sm.uppercase {
+  margin-top: 1rem !important;
+}
+
+.v5-theme #features .v5-feature-card h3 {
+  margin-top: 0.85rem !important;
+  font-size: 1.72rem !important;
+  line-height: 1.1 !important;
+}
+
+.v5-theme #features .v5-feature-card p {
+  margin-top: 0.7rem !important;
+  line-height: 1.72 !important;
+}
+
+.v5-theme #features .v5-feature-card .mt-6.grid {
+  margin-top: 1rem !important;
+  gap: 0.65rem !important;
+}
+
+.v5-theme #features .v5-feature-card .rounded-\[16px\] {
+  background: rgba(255, 255, 255, 0.56) !important;
+  border-color: rgba(111, 139, 156, 0.12) !important;
+  color: #274657 !important;
+  padding: 0.72rem 0.82rem !important;
+  font-size: 0.84rem !important;
+  line-height: 1.35 !important;
 }
 
 .v5-theme #benefits .bg-white\/\[0\.055\],
@@ -473,6 +591,108 @@
 .v5-theme #faq .bg-\[\#f6effd\] {
   background: rgba(121, 229, 215, 0.18) !important;
   color: #10283c !important;
+}
+
+.v5-theme .v5-hero-consultation-card {
+  background:
+    linear-gradient(180deg, rgba(224, 244, 245, 0.14), rgba(119, 177, 196, 0.08)) !important;
+  border-color: rgba(209, 244, 240, 0.18) !important;
+  box-shadow:
+    0 0 0 1px rgba(124, 231, 215, 0.1),
+    0 30px 80px rgba(5, 15, 25, 0.24) !important;
+  backdrop-filter: blur(24px);
+}
+
+.v5-theme .v5-hero-consultation-wrap > .absolute {
+  background: radial-gradient(circle at top right, rgba(92, 171, 190, 0.2), transparent 44%) !important;
+}
+
+.v5-theme .v5-hero-consultation-card > .absolute {
+  opacity: 0.85;
+}
+
+.v5-theme .v5-hero-consultation-card label,
+.v5-theme .v5-hero-consultation-card p {
+  color: #bdd2dd !important;
+}
+
+.v5-theme .v5-hero-consultation-card input,
+.v5-theme .v5-hero-consultation-card textarea {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(208, 242, 238, 0.1) !important;
+}
+
+.v5-theme .v5-hero-marquee-shell {
+  background:
+    linear-gradient(180deg, rgba(8, 20, 32, 0.32), rgba(9, 24, 38, 0.2)) !important;
+  border-color: rgba(202, 238, 235, 0.08) !important;
+  backdrop-filter: blur(18px);
+}
+
+.v5-theme .v5-journey-intro {
+  width: 33rem !important;
+}
+
+.v5-theme .v5-journey-intro h2 {
+  max-width: 29rem !important;
+}
+
+.v5-theme .v5-journey-intro p {
+  max-width: 30rem !important;
+}
+
+.v5-theme #journey .v5-journey-ready-card {
+  background:
+    linear-gradient(180deg, rgba(225, 245, 246, 0.16), rgba(108, 166, 188, 0.11)) !important;
+  border-color: rgba(214, 245, 242, 0.2) !important;
+  box-shadow: 0 28px 76px rgba(3, 11, 20, 0.24) !important;
+}
+
+.v5-theme #journey .v5-journey-ready-card .rounded-pill {
+  background: rgba(18, 47, 65, 0.18) !important;
+}
+
+.v5-theme #journey .v5-journey-ready-card a {
+  background: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 14px 30px rgba(4, 10, 17, 0.16);
+  color: #0f2434 !important;
+}
+
+.v5-theme #benefits .v5-benefit-card {
+  overflow: hidden;
+}
+
+.v5-theme #benefits .v5-benefit-art {
+  display: block;
+  border: 1px solid rgba(103, 129, 147, 0.12);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top right, rgba(118, 221, 213, 0.16), transparent 36%),
+    linear-gradient(180deg, #deedf0, #c9dbe2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.46);
+  object-fit: contain;
+  object-position: center;
+  padding: 0.8rem;
+}
+
+.v5-theme #journey .journey-logo,
+.v5-theme #journey img[src*='frame16'] {
+  filter: hue-rotate(160deg) saturate(0.34) brightness(0.86) !important;
+  opacity: 0.34 !important;
+}
+
+.v5-theme .bg-\[\#120419\] > .pointer-events-none.absolute.inset-x-0.top-0.h-48 {
+  background: radial-gradient(circle at top, rgba(93, 176, 189, 0.18), transparent 62%) !important;
+}
+
+.v5-theme .bg-\[\#120419\] .rounded-pill {
+  background: rgba(17, 46, 64, 0.18) !important;
+  border-color: rgba(128, 224, 217, 0.16) !important;
+}
+
+.v5-theme .bg-\[\#120419\] article:last-child .text-\[\#d7bbf2\] {
+  color: #79e5d7 !important;
 }
 
 .v5-theme .from-\[\#ffffff\].to-\[\#f3d8ff\] {
@@ -600,6 +820,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .v5-theme .hero-ambient,
+  .v5-theme .hero-grid,
+  .v5-theme .hero-beam-left,
+  .v5-theme .hero-beam-right,
   .v5-theme .bg-aurora::before,
   .v5-theme .bg-aurora::after,
   .v5-theme .hero-ambient::before,

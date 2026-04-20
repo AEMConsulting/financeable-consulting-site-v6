@@ -46,3 +46,8 @@ npm run test:e2e
 ## Deployment
 
 The repository is prepared for GitHub Pages static hosting. In the current environment, Pages deployment is published manually from the built `gh-pages` branch because the active GitHub token does not include workflow write scope.
+
+Handoff rule for this project:
+
+- after a GitHub push, always include the GitHub Pages live URL in the final handoff
+- if only the source branch was pushed and `gh-pages` was not republished yet, say that clearly and include the current live URL anyway

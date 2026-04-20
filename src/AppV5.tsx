@@ -3,6 +3,22 @@ import App from '@/App.tsx'
 
 const idleBackground = { x: 0.46, y: 0.24 }
 const toDataUri = (markup: string) => `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(markup)}`
+const journeyMark = toDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 820" fill="none">
+  <defs>
+    <linearGradient id="journey-c-stroke" x1="130" y1="110" x2="570" y2="710" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#BDF4EE"/>
+      <stop offset=".46" stop-color="#79E5D7"/>
+      <stop offset="1" stop-color="#2B8D88"/>
+    </linearGradient>
+    <radialGradient id="journey-c-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(350 410) rotate(90) scale(340 300)">
+      <stop stop-color="#8AF0E4" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#8AF0E4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="350" cy="410" r="266" stroke="url(#journey-c-stroke)" stroke-width="72" stroke-linecap="round" stroke-dasharray="1180 520" transform="rotate(24 350 410)"/>
+  <path d="M525 238c-42-55-106-86-184-86-138 0-236 96-236 258 0 162 98 258 236 258 80 0 145-29 190-88" stroke="url(#journey-c-stroke)" stroke-width="44" stroke-linecap="round" opacity=".9"/>
+  <circle cx="350" cy="410" r="314" fill="url(#journey-c-glow)"/>
+</svg>`)
 const benefitVisuals = [
   toDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" fill="none">
     <circle cx="92" cy="74" r="34" fill="#EFF8F7"/>
@@ -65,6 +81,7 @@ function AnimatedCursor({ themeRef }: { themeRef: { current: HTMLDivElement | nu
   const [isVisible, setIsVisible] = useState(false)
   const [isInteractive, setIsInteractive] = useState(false)
   const [isPressed, setIsPressed] = useState(false)
+  const [isOnLightSurface, setIsOnLightSurface] = useState(false)
 
   useEffect(() => {
     const finePointer = window.matchMedia('(pointer: fine)')
@@ -137,13 +154,18 @@ function AnimatedCursor({ themeRef }: { themeRef: { current: HTMLDivElement | nu
         const nextInteractive = Boolean(
           target.closest('a, button, input, textarea, select, label, [role="button"]'),
         )
+        const nextLightSurface = Boolean(
+          target.closest('#features, #benefits, #faq'),
+        )
 
         setIsInteractive((current) => (current === nextInteractive ? current : nextInteractive))
+        setIsOnLightSurface((current) => (current === nextLightSurface ? current : nextLightSurface))
       }
     }
 
     const handlePointerLeave = () => {
       setIsVisible(false)
+      setIsOnLightSurface(false)
       backgroundTargetRef.current = idleBackground
     }
     const handlePointerDown = () => setIsPressed(true)
@@ -171,12 +193,12 @@ function AnimatedCursor({ themeRef }: { themeRef: { current: HTMLDivElement | nu
       <div
         ref={ringRef}
         aria-hidden="true"
-        className={`v5-cursor-ring${isVisible ? ' is-visible' : ''}${isInteractive ? ' is-interactive' : ''}${isPressed ? ' is-pressed' : ''}`}
+        className={`v5-cursor-ring${isVisible ? ' is-visible' : ''}${isInteractive ? ' is-interactive' : ''}${isPressed ? ' is-pressed' : ''}${isOnLightSurface ? ' is-on-light' : ''}`}
       />
       <div
         ref={dotRef}
         aria-hidden="true"
-        className={`v5-cursor-dot${isVisible ? ' is-visible' : ''}${isInteractive ? ' is-interactive' : ''}${isPressed ? ' is-pressed' : ''}`}
+        className={`v5-cursor-dot${isVisible ? ' is-visible' : ''}${isInteractive ? ' is-interactive' : ''}${isPressed ? ' is-pressed' : ''}${isOnLightSurface ? ' is-on-light' : ''}`}
       />
     </>
   )
@@ -278,6 +300,11 @@ function AppV5() {
         }
       })
 
+      theme.querySelectorAll<HTMLImageElement>('#journey .journey-logo, #journey img[src*="frame16"]').forEach((image) => {
+        image.setAttribute('src', journeyMark)
+        image.classList.add('v5-journey-mark')
+      })
+
       theme.querySelectorAll<HTMLElement>('#benefits article').forEach((card, index) => {
         card.classList.add('v5-benefit-card')
         const image = card.querySelector<HTMLImageElement>('img')
@@ -288,6 +315,10 @@ function AppV5() {
           image.setAttribute('src', benefitVisuals[index])
         }
       })
+
+      theme
+        .querySelector<HTMLElement>('main > section:last-of-type .mt-10.flex.flex-wrap.justify-center.gap-3')
+        ?.remove()
     }
 
     applyV5Enhancements()

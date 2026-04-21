@@ -16,6 +16,20 @@ Third design version (Apple-style refresh):
 - entry: `v3/index.html` via `src/v3-main.tsx`
 - route: `/v3/`
 
+Fifth design version (navy and aqua consulting theme):
+
+- source: `src/AppV5.tsx`
+- styles: `src/v5.css`
+- entry: `v5/index.html` via `src/v5-main.tsx`
+- route: `/v5/`
+
+Sixth design version (editorial brass theme):
+
+- source: `src/AppV6.tsx`
+- styles: `src/v6.css`
+- entry: `v6/index.html` via `src/v6-main.tsx`
+- route: `/v6/`
+
 ## Stack
 
 - React 19
@@ -35,12 +49,26 @@ npm install
 npm run dev
 ```
 
+If your Mac shell does not expose `node` or `npm`, use the repo-local fallback:
+
+```bash
+./scripts/run-with-local-node.sh npm run dev
+```
+
 ## Validation
 
 ```bash
 npm run build
 npm run lint
 npm run test:e2e
+```
+
+Repo-local Node fallback:
+
+```bash
+./scripts/run-with-local-node.sh npm run build
+./scripts/run-with-local-node.sh npm run lint
+./scripts/run-with-local-node.sh npm run test:e2e
 ```
 
 ## Deployment

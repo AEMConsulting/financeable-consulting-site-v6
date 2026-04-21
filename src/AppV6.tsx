@@ -1,73 +1,71 @@
 import { useEffect, useRef, useState } from 'react'
 import App from '@/App.tsx'
 
-const idleBackground = { x: 0.46, y: 0.24 }
+const idleBackground = { x: 0.48, y: 0.22 }
 const toDataUri = (markup: string) => `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(markup)}`
 const journeyMark = toDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 820" fill="none">
   <defs>
-    <linearGradient id="journey-c-stroke" x1="130" y1="110" x2="570" y2="710" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#BDF4EE"/>
-      <stop offset=".46" stop-color="#79E5D7"/>
-      <stop offset="1" stop-color="#2B8D88"/>
+    <linearGradient id="journey-v6-stroke" x1="142" y1="112" x2="570" y2="714" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7EBD2"/>
+      <stop offset=".44" stop-color="#C79A52"/>
+      <stop offset="1" stop-color="#5F4626"/>
     </linearGradient>
-    <radialGradient id="journey-c-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(350 410) rotate(90) scale(340 300)">
-      <stop stop-color="#8AF0E4" stop-opacity=".34"/>
-      <stop offset="1" stop-color="#8AF0E4" stop-opacity="0"/>
+    <radialGradient id="journey-v6-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(350 410) rotate(90) scale(332 286)">
+      <stop stop-color="#E7C186" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#E7C186" stop-opacity="0"/>
     </radialGradient>
   </defs>
-  <circle cx="350" cy="410" r="266" stroke="url(#journey-c-stroke)" stroke-width="72" stroke-linecap="round" stroke-dasharray="1180 520" transform="rotate(24 350 410)"/>
-  <path d="M525 238c-42-55-106-86-184-86-138 0-236 96-236 258 0 162 98 258 236 258 80 0 145-29 190-88" stroke="url(#journey-c-stroke)" stroke-width="44" stroke-linecap="round" opacity=".9"/>
-  <circle cx="350" cy="410" r="314" fill="url(#journey-c-glow)"/>
+  <path d="M182 212c44-58 105-86 180-86 146 0 242 99 242 251 0 156-102 267-252 267-74 0-130-19-174-55" stroke="url(#journey-v6-stroke)" stroke-width="42" stroke-linecap="round"/>
+  <path d="M486 214c-34-24-72-34-125-34-118 0-196 75-196 194 0 122 75 196 191 196 58 0 102-13 138-42" stroke="url(#journey-v6-stroke)" stroke-width="72" stroke-linecap="round" stroke-dasharray="702 420"/>
+  <circle cx="350" cy="410" r="306" fill="url(#journey-v6-glow)"/>
 </svg>`)
 const benefitVisuals = [
   toDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" fill="none">
-    <circle cx="92" cy="74" r="34" fill="#EFF8F7"/>
-    <path d="M42 140H178" stroke="#73DDD3" stroke-width="8" stroke-linecap="round"/>
-    <path d="M198 118C226 118 248 140 248 168" stroke="#2B8D88" stroke-width="10" stroke-linecap="round"/>
-    <circle cx="248" cy="168" r="9" fill="#2B8D88"/>
-    <path d="M294 114H432" stroke="#C2D3DB" stroke-width="4" stroke-dasharray="10 12"/>
-    <path d="M294 168H474" stroke="#C2D3DB" stroke-width="4" stroke-dasharray="10 12"/>
-    <circle cx="454" cy="114" r="9" fill="#E5EEF1"/>
-    <circle cx="506" cy="168" r="9" fill="#E5EEF1"/>
+    <rect x="52" y="58" width="178" height="126" rx="26" fill="#FCF7EF" stroke="#D3C2A6"/>
+    <path d="M92 154H184" stroke="#A47337" stroke-width="8" stroke-linecap="round"/>
+    <path d="M258 86H540" stroke="#CDBDA3" stroke-width="4" stroke-dasharray="10 12"/>
+    <path d="M258 144H484" stroke="#CDBDA3" stroke-width="4" stroke-dasharray="10 12"/>
+    <circle cx="300" cy="86" r="9" fill="#A47337"/>
+    <circle cx="396" cy="144" r="9" fill="#3C434D"/>
+    <circle cx="514" cy="86" r="18" fill="#EFE1CB"/>
   </svg>`),
   toDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" fill="none">
-    <path d="M70 126H520" stroke="#C7D7DE" stroke-width="4" stroke-dasharray="10 12"/>
-    <path d="M236 62V198" stroke="url(#lineA)" stroke-width="5"/>
-    <path d="M382 72V190" stroke="url(#lineB)" stroke-width="5"/>
-    <circle cx="126" cy="86" r="28" fill="#F6FBFA"/>
-    <circle cx="282" cy="80" r="24" fill="#BDEFE8"/>
-    <circle cx="432" cy="148" r="18" fill="#DCE9EE"/>
+    <path d="M76 126H552" stroke="#D7C7AC" stroke-width="4" stroke-dasharray="10 12"/>
+    <path d="M214 56V202" stroke="url(#v6-line-a)" stroke-width="5"/>
+    <path d="M380 72V184" stroke="url(#v6-line-b)" stroke-width="5"/>
+    <circle cx="130" cy="90" r="26" fill="#FBF6EE"/>
+    <circle cx="274" cy="92" r="22" fill="#E8C98F"/>
+    <circle cx="448" cy="144" r="16" fill="#D9DEE3"/>
     <defs>
-      <linearGradient id="lineA" x1="236" y1="62" x2="236" y2="198" gradientUnits="userSpaceOnUse">
-        <stop stop-color="transparent"/><stop offset=".5" stop-color="#9FDCD8"/><stop offset="1" stop-color="transparent"/>
+      <linearGradient id="v6-line-a" x1="214" y1="56" x2="214" y2="202" gradientUnits="userSpaceOnUse">
+        <stop stop-color="transparent"/><stop offset=".5" stop-color="#A47337"/><stop offset="1" stop-color="transparent"/>
       </linearGradient>
-      <linearGradient id="lineB" x1="382" y1="72" x2="382" y2="190" gradientUnits="userSpaceOnUse">
-        <stop stop-color="transparent"/><stop offset=".5" stop-color="#79B7C6"/><stop offset="1" stop-color="transparent"/>
+      <linearGradient id="v6-line-b" x1="380" y1="72" x2="380" y2="184" gradientUnits="userSpaceOnUse">
+        <stop stop-color="transparent"/><stop offset=".5" stop-color="#525965"/><stop offset="1" stop-color="transparent"/>
       </linearGradient>
     </defs>
   </svg>`),
   toDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" fill="none">
-    <path d="M74 82H210" stroke="#7BE3D9" stroke-width="8" stroke-linecap="round"/>
-    <path d="M266 68V190" stroke="url(#speed)" stroke-width="5"/>
-    <path d="M356 92H532" stroke="#B9CCD6" stroke-width="4" stroke-dasharray="10 12"/>
-    <circle cx="126" cy="64" r="26" fill="#F5FBFB"/>
-    <circle cx="478" cy="92" r="10" fill="#DDE7EB"/>
-    <path d="M332 132H566" stroke="#C5D6DE" stroke-width="4" stroke-dasharray="10 12"/>
-    <circle cx="552" cy="132" r="10" fill="#DDE7EB"/>
+    <path d="M82 84H222" stroke="#BF8A46" stroke-width="8" stroke-linecap="round"/>
+    <path d="M266 68V194" stroke="url(#v6-speed)" stroke-width="5"/>
+    <path d="M348 112H550" stroke="#D3C3AB" stroke-width="4" stroke-dasharray="10 12"/>
+    <path d="M330 156H502" stroke="#D3C3AB" stroke-width="4" stroke-dasharray="10 12"/>
+    <circle cx="138" cy="64" r="24" fill="#FBF5EB"/>
+    <circle cx="452" cy="112" r="10" fill="#EAD8B7"/>
+    <circle cx="528" cy="156" r="10" fill="#3B434E"/>
     <defs>
-      <linearGradient id="speed" x1="266" y1="68" x2="266" y2="190" gradientUnits="userSpaceOnUse">
-        <stop stop-color="transparent"/><stop offset=".52" stop-color="#CFE6EC"/><stop offset="1" stop-color="transparent"/>
+      <linearGradient id="v6-speed" x1="266" y1="68" x2="266" y2="194" gradientUnits="userSpaceOnUse">
+        <stop stop-color="transparent"/><stop offset=".5" stop-color="#D5AB6C"/><stop offset="1" stop-color="transparent"/>
       </linearGradient>
     </defs>
   </svg>`),
   toDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" fill="none">
-    <rect x="70" y="46" width="222" height="108" rx="22" fill="#F8FCFC" stroke="#D7E5EA"/>
-    <rect x="112" y="78" width="222" height="108" rx="22" fill="#FFFFFF" fill-opacity=".92" stroke="#D7E5EA"/>
-    <rect x="154" y="108" width="246" height="112" rx="24" fill="#FFFFFF" stroke="#D1E1E7"/>
-    <rect x="118" y="132" width="206" height="50" rx="18" fill="#FFFFFF" stroke="#D7E5EA"/>
-    <path d="M144 156H272" stroke="#2B8D88" stroke-width="6" stroke-linecap="round"/>
-    <circle cx="492" cy="82" r="22" fill="#E4F6F4"/>
-    <circle cx="542" cy="146" r="16" fill="#D8E7EC"/>
+    <rect x="80" y="48" width="214" height="108" rx="22" fill="#FCF7EF" stroke="#DAC9AF"/>
+    <rect x="122" y="84" width="214" height="108" rx="22" fill="#FFFDF9" stroke="#D8C7AA"/>
+    <rect x="162" y="114" width="242" height="108" rx="24" fill="#F9F4EC" stroke="#D8C7AA"/>
+    <path d="M194 160H312" stroke="#A06D34" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="494" cy="88" r="20" fill="#E8D1AA"/>
+    <circle cx="542" cy="148" r="16" fill="#D9DDE3"/>
   </svg>`),
 ]
 
@@ -154,9 +152,7 @@ function AnimatedCursor({ themeRef }: { themeRef: { current: HTMLDivElement | nu
         const nextInteractive = Boolean(
           target.closest('a, button, input, textarea, select, label, [role="button"]'),
         )
-        const nextLightSurface = Boolean(
-          target.closest('#features, #benefits, #faq'),
-        )
+        const nextLightSurface = Boolean(target.closest('#features, #benefits, #faq'))
 
         setIsInteractive((current) => (current === nextInteractive ? current : nextInteractive))
         setIsOnLightSurface((current) => (current === nextLightSurface ? current : nextLightSurface))
@@ -204,7 +200,7 @@ function AnimatedCursor({ themeRef }: { themeRef: { current: HTMLDivElement | nu
   )
 }
 
-function AppV5() {
+function AppV6() {
   const themeRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -214,7 +210,7 @@ function AppV5() {
       return
     }
 
-    const applyV5Enhancements = () => {
+    const applyV6Enhancements = () => {
       const headerBrand = theme.querySelector<HTMLElement>('header a[href="#top"]')
 
       if (headerBrand) {
@@ -272,8 +268,8 @@ function AppV5() {
         'main section:first-of-type .surface-glass .text-sm.text-lilac',
       )
 
-      if (heroMetricLabel && heroMetricLabel.textContent !== 'Reporting') {
-        heroMetricLabel.textContent = 'Reporting'
+      if (heroMetricLabel && heroMetricLabel.textContent !== 'Operating cadence') {
+        heroMetricLabel.textContent = 'Operating cadence'
       }
 
       theme
@@ -309,12 +305,16 @@ function AppV5() {
         .querySelector<HTMLElement>('#journey .lg\\:hidden .mt-8.flex.items-center.justify-center.gap-4')
         ?.classList.add('v5-journey-mobile-controls')
 
-      theme.querySelectorAll<HTMLImageElement>('#journey .journey-logo, #journey img[src*="frame16"]').forEach((image) => {
-        image.setAttribute('src', journeyMark)
-        image.classList.add('v5-journey-mark')
-      })
+      theme
+        .querySelectorAll<HTMLImageElement>('#journey .journey-logo, #journey img[src*="frame16"]')
+        .forEach((image) => {
+          image.setAttribute('src', journeyMark)
+          image.classList.add('v5-journey-mark')
+        })
 
-      theme.querySelector<HTMLElement>('#benefits .mt-14.flex.items-center.justify-end.gap-4')?.classList.add('v5-benefits-controls')
+      theme
+        .querySelector<HTMLElement>('#benefits .mt-14.flex.items-center.justify-end.gap-4')
+        ?.classList.add('v5-benefits-controls')
       theme.querySelector<HTMLElement>('#benefits .benefits-swiper')?.classList.add('v5-benefits-mobile-swiper')
 
       theme.querySelectorAll<HTMLElement>('#benefits article').forEach((card, index) => {
@@ -350,10 +350,10 @@ function AppV5() {
       }
     }
 
-    applyV5Enhancements()
+    applyV6Enhancements()
 
     const observer = new MutationObserver(() => {
-      window.requestAnimationFrame(applyV5Enhancements)
+      window.requestAnimationFrame(applyV6Enhancements)
     })
 
     observer.observe(theme, { childList: true, subtree: true })
@@ -366,11 +366,11 @@ function AppV5() {
   return (
     <>
       <AnimatedCursor themeRef={themeRef} />
-      <div ref={themeRef} className="v5-theme">
+      <div ref={themeRef} className="v5-theme v6-theme">
         <App />
       </div>
     </>
   )
 }
 
-export default AppV5
+export default AppV6

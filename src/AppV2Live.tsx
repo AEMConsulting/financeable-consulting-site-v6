@@ -108,6 +108,61 @@ function applyV2CopyVariant(root: HTMLDivElement | null) {
       card.querySelector<HTMLElement>('.mt-6.grid')?.remove()
     })
   }
+
+  const journeySection = theme.querySelector<HTMLElement>('#journey')
+
+  if (journeySection) {
+    const headingCandidates = journeySection.querySelectorAll<HTMLElement>('h2')
+
+    headingCandidates.forEach((heading) => {
+      heading.textContent = 'Review. Build. Decide.'
+    })
+
+    const desktopTrack = journeySection.querySelector<HTMLElement>('.hidden.lg\\:flex')
+    const mobileStack = journeySection.querySelector<HTMLElement>('.lg\\:hidden')
+
+    const updateJourneyCards = (scope: ParentNode | null) => {
+      if (!scope) {
+        return
+      }
+
+      const cards = scope.querySelectorAll<HTMLElement>('article')
+      const cardCopy = [
+        'A full review of where clarity is breaking down.',
+        'Structured reporting and review, tailored to how you operate.',
+        'Tighter visibility across reporting, cash, and planning.',
+        'Finance support as a guide, not just a record.',
+        'A method that keeps up with your growing business.',
+      ] as const
+
+      cardCopy.forEach((copy, index) => {
+        const card = cards[index]
+        const body = card?.querySelector<HTMLElement>('p')
+
+        if (body) {
+          body.textContent = copy
+        }
+      })
+
+      const ctaCard = cards[5]
+
+      if (ctaCard) {
+        const ctaHeading = ctaCard.querySelector<HTMLElement>('h3')
+        const ctaBody = ctaCard.querySelector<HTMLElement>('p')
+
+        if (ctaHeading) {
+          ctaHeading.textContent = 'Ready to make the leap?'
+        }
+
+        if (ctaBody) {
+          ctaBody.textContent = 'Built for founders who want control without the full-time hire.'
+        }
+      }
+    }
+
+    updateJourneyCards(desktopTrack)
+    updateJourneyCards(mobileStack)
+  }
 }
 
 function AppV2Live() {

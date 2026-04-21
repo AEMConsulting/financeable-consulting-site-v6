@@ -18,4 +18,9 @@ test('design version two loads the live text variant with updated hero and capab
       'Reporting, cash visibility, and finance leadership without the full-time CFO hire, made for founders.',
     ),
   ).toBeVisible()
+  await expect(
+    page.getByRole('heading', {
+      name: 'Review. Build. Decide.',
+    }),
+  ).toBeVisible()
 })

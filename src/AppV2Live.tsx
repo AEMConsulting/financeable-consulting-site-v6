@@ -12,9 +12,20 @@ function applyV2CopyVariant(root: HTMLDivElement | null) {
     return
   }
 
+  theme.classList.add('v2-live-variant')
+
   const heroSection = theme.querySelector<HTMLElement>('main section:first-of-type')
 
   if (heroSection) {
+    const heroGrid = heroSection.querySelector<HTMLElement>(':scope > .mx-auto.grid')
+    const heroCtaShell = heroGrid?.lastElementChild as HTMLElement | null
+
+    heroGrid?.classList.add('v2-live-hero-grid')
+    heroCtaShell?.classList.add('v2-live-hero-cta-shell')
+    heroCtaShell
+      ?.querySelector<HTMLElement>('.v5-hero-consultation-card')
+      ?.classList.add('v2-live-hero-cta-card')
+
     const heroHeading = heroSection.querySelector<HTMLElement>('h1')
     const heroBody = heroHeading?.nextElementSibling as HTMLElement | null
 

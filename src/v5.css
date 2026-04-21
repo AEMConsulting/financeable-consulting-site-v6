@@ -639,6 +639,30 @@
   border-color: rgba(216, 244, 241, 0.14) !important;
 }
 
+.v5-theme.v2-live-variant .v2-live-hero-grid {
+  align-items: stretch !important;
+}
+
+.v5-theme.v2-live-variant .v2-live-hero-cta-shell {
+  align-self: stretch;
+  display: flex;
+  padding-top: 0 !important;
+}
+
+.v5-theme.v2-live-variant .v2-live-hero-cta-card {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 100%;
+}
+
+.v5-theme.v2-live-variant .v2-live-hero-cta-card > .relative {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+}
+
 .v5-theme .v5-hero-marquee-shell {
   background:
     linear-gradient(180deg, rgba(8, 20, 32, 0.32), rgba(9, 24, 38, 0.2)) !important;

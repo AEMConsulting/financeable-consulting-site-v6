@@ -86,7 +86,7 @@ const featureCards: readonly FeatureCardData[] = [
     title: 'Clarity, control and strong foundations',
     copy:
       'A recurring senior finance model for businesses that need clearer reporting, sharper decision support, and a dependable monthly operating rhythm.',
-    bullets: ['Structured monthly reporting', 'Forward-looking financial insights'],
+    bullets: ['Structured monthly reporting', 'Strategic support for leadership'],
     icon: Landmark,
     visual: 'routing',
   },
@@ -95,7 +95,7 @@ const featureCards: readonly FeatureCardData[] = [
     title: 'Transforming your numbers into clear, decision-ready insight',
     copy:
       'Clear, accurate monthly reporting with focused commentary that leadership can use to make confident decisions.',
-    bullets: ['Structured monthly management accounts', 'Variance analysis with clear explanations'],
+    bullets: ['Structured monthly management accounts', 'Full visibility over business performance'],
     icon: NotebookTabs,
     visual: 'cadence',
   },
@@ -104,7 +104,7 @@ const featureCards: readonly FeatureCardData[] = [
     title: 'Forward cash visibility before pressure turns into risk',
     copy:
       'Rolling cash forecasting, structured planning cadence, and practical support give you a reliable view of liquidity and what is ahead.',
-    bullets: ['Rolling cashflow forecast', 'Forward-looking decision support'],
+    bullets: ['Rolling cash flow forecast', 'Clear visibility over future cash position'],
     icon: Wallet,
     visual: 'speed',
   },
@@ -412,7 +412,9 @@ function FeatureCard({ feature }: { feature: FeatureCardData }) {
       className="surface-light feature-card relative overflow-hidden rounded-[30px] border border-[#eadcf5] bg-white p-6 shadow-[0_24px_70px_rgba(97,31,146,0.1)] md:p-7"
     >
       <FeatureVisual icon={feature.icon} visual={feature.visual} />
-      <div className="mt-6 text-sm uppercase tracking-[0.28em] text-[#7f34a4]">{feature.tag}</div>
+      <div className="mt-6 text-sm font-semibold uppercase tracking-[0.28em] text-[#16354a]">
+        {feature.tag}
+      </div>
       <h3 className="mt-4 font-display text-[2rem] font-medium leading-tight tracking-[-0.045em] text-[#16091f]">
         {feature.title}
       </h3>
@@ -431,19 +433,100 @@ function FeatureCard({ feature }: { feature: FeatureCardData }) {
   )
 }
 
+function JourneyPanel({
+  step,
+  className = '',
+}: {
+  step: (typeof processSteps)[number]
+  className?: string
+}) {
+  return (
+    <article
+      className={`journey-card-desktop gradient-outline relative min-h-[21rem] overflow-hidden rounded-[30px] bg-[linear-gradient(180deg,rgba(42,28,52,0.9),rgba(23,14,32,0.94))] p-7 backdrop-blur-xl md:min-h-[23rem] md:p-8 ${className}`}
+    >
+      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/8 font-display text-2xl text-white md:h-16 md:w-16 md:text-3xl">
+        {step.number}
+      </div>
+      <h3 className="mt-8 font-display text-3xl font-medium tracking-[-0.04em] text-white md:text-[2.2rem] md:leading-tight md:tracking-[-0.045em]">
+        {step.title}
+      </h3>
+      <p className="mt-5 text-base leading-8 text-[#ddd1ea] md:text-[1.05rem]">{step.copy}</p>
+    </article>
+  )
+}
+
+function JourneyReadyPanel({ className = '' }: { className?: string }) {
+  return (
+    <article
+      className={`gradient-outline relative overflow-hidden rounded-[34px] bg-[linear-gradient(180deg,rgba(42,28,52,0.9),rgba(23,14,32,0.94))] p-7 backdrop-blur-xl md:p-8 ${className}`}
+    >
+      <SectionPill>Ready to start</SectionPill>
+      <h3 className="mt-6 font-display text-3xl font-medium tracking-[-0.04em] text-white md:max-w-[22rem] md:text-[2.6rem] md:leading-tight md:tracking-[-0.045em]">
+        Ready for clear monthly numbers, better decisions, and a more controlled finance function?
+      </h3>
+      <p className="mt-5 text-base leading-8 text-[#ddd1ea] md:max-w-[23rem] md:text-[1.05rem]">
+        Cuno helps growing businesses improve monthly visibility through Senior
+        Finance Support, Management Reporting, and Cashflow Forecasting.
+      </p>
+      <a href="#contact" className={`${darkButton} mt-8`}>
+        Book a consultation
+        <ArrowRight className="h-4 w-4" />
+      </a>
+    </article>
+  )
+}
+
+function BenefitPanel({
+  slide,
+  active = true,
+}: {
+  slide: (typeof benefitSlides)[number]
+  active?: boolean
+}) {
+  return (
+    <article
+      className={`gradient-outline v5-benefit-card relative flex h-full min-h-[31rem] flex-col justify-between overflow-hidden rounded-[34px] bg-white/[0.055] p-7 transition-all duration-500 md:min-h-[34rem] md:p-8 ${
+        active ? 'translate-y-0 opacity-100' : 'translate-y-[2.5rem] opacity-45'
+      }`}
+    >
+      <div>
+        <h3 className="font-display text-[2rem] font-medium leading-tight tracking-[-0.04em] text-white">
+          {slide.title}
+        </h3>
+        <p className="mt-5 text-[1.05rem] leading-8 text-[#ddd1ea]">{slide.copy}</p>
+      </div>
+      <div>
+        <div className="v5-benefit-impact rounded-[18px] border border-white/8 bg-white/[0.05] px-4 py-3 text-sm font-semibold text-[#efe3ff]">
+          {slide.impact}
+        </div>
+        <img
+          src={slide.image}
+          alt=""
+          className="v5-benefit-art mt-8 h-52 w-full object-contain object-center"
+        />
+      </div>
+    </article>
+  )
+}
+
 function App() {
   const pageRef = useRef<HTMLDivElement | null>(null)
   const heroRef = useRef<HTMLDivElement | null>(null)
   const heroTitleRef = useRef<HTMLHeadingElement | null>(null)
   const journeyRef = useRef<HTMLElement | null>(null)
   const journeyTrackRef = useRef<HTMLDivElement | null>(null)
+  const journeyMobilePinRef = useRef<HTMLDivElement | null>(null)
+  const journeyMobileStageRef = useRef<HTMLDivElement | null>(null)
+  const journeyMobileTrackRef = useRef<HTMLDivElement | null>(null)
+  const benefitsMobilePinRef = useRef<HTMLDivElement | null>(null)
+  const benefitsMobileStageRef = useRef<HTMLDivElement | null>(null)
+  const benefitsMobileTrackRef = useRef<HTMLDivElement | null>(null)
   const shouldReduceMotion = useReducedMotion()
   const [activeFaq, setActiveFaq] = useState(0)
   const [activeCase, setActiveCase] = useState(0)
   const [isHeaderSolid, setIsHeaderSolid] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [featureSwiper, setFeatureSwiper] = useState<SwiperType | null>(null)
-  const [journeySwiper, setJourneySwiper] = useState<SwiperType | null>(null)
   const [benefitSwiper, setBenefitSwiper] = useState<SwiperType | null>(null)
   const [activeBenefit, setActiveBenefit] = useState(0)
   const activeCaseItem = caseStudies[activeCase] ?? caseStudies[0]
@@ -630,26 +713,35 @@ function App() {
             scrub: 1,
           },
         })
+      })
 
-        gsap.utils.toArray<HTMLElement>('.journey-card-desktop').forEach((card, index) => {
-          gsap.fromTo(
-            card,
-            {
-              y: index % 2 === 0 ? -16 : 36,
-              opacity: 0.78,
-            },
-            {
-              y: index % 2 === 0 ? 24 : -14,
-              opacity: 1,
-              ease: 'none',
-              scrollTrigger: {
-                trigger: section,
-                start: 'top top',
-                end: () => `+=${distance + 900}`,
-                scrub: 1,
-              },
-            },
-          )
+      mediaQuery.add('(max-width: 1023px)', () => {
+        if (!journeyMobilePinRef.current || !journeyMobileStageRef.current || !journeyMobileTrackRef.current) {
+          return
+        }
+
+        const pin = journeyMobilePinRef.current
+        const stage = journeyMobileStageRef.current
+        const mobileTrack = journeyMobileTrackRef.current
+        const distance = Math.max(0, mobileTrack.scrollWidth - stage.clientWidth)
+
+        if (!distance) {
+          return
+        }
+
+        gsap.set(mobileTrack, { x: 0 })
+        gsap.to(mobileTrack, {
+          x: -distance,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: pin,
+            start: 'top top',
+            end: () => `+=${distance + 320}`,
+            pin: true,
+            scrub: 1,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          },
         })
       })
 
@@ -658,6 +750,52 @@ function App() {
       }
     },
     { scope: journeyRef, dependencies: [shouldReduceMotion] },
+  )
+
+  useGSAP(
+    () => {
+      if (shouldReduceMotion || !benefitsMobilePinRef.current || !benefitsMobileStageRef.current || !benefitsMobileTrackRef.current) {
+        return
+      }
+
+      const mediaQuery = gsap.matchMedia()
+
+      mediaQuery.add('(max-width: 1023px)', () => {
+        const pin = benefitsMobilePinRef.current
+        const stage = benefitsMobileStageRef.current
+        const track = benefitsMobileTrackRef.current
+
+        if (!pin || !stage || !track) {
+          return
+        }
+
+        const distance = Math.max(0, track.scrollWidth - stage.clientWidth)
+
+        if (!distance) {
+          return
+        }
+
+        gsap.set(track, { x: 0 })
+        gsap.to(track, {
+          x: -distance,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: pin,
+            start: 'top top',
+            end: () => `+=${distance + 280}`,
+            pin: true,
+            scrub: 1,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          },
+        })
+      })
+
+      return () => {
+        mediaQuery.revert()
+      }
+    },
+    { scope: pageRef, dependencies: [shouldReduceMotion] },
   )
 
   return (
@@ -1105,7 +1243,10 @@ function App() {
           />
 
           <div className="lg:hidden">
-            <div className="relative mx-auto max-w-7xl px-6 py-24 md:px-10">
+            <div
+              ref={journeyMobilePinRef}
+              className="relative mx-auto max-w-7xl px-6 py-24 md:px-10"
+            >
               <img
                 src={media.frame}
                 alt=""
@@ -1124,73 +1265,29 @@ function App() {
                 </p>
               </div>
 
-              <div className="relative mt-12">
-                <Swiper
-                  onSwiper={setJourneySwiper}
-                  slidesPerView={1.08}
-                  spaceBetween={18}
-                  breakpoints={{
-                    700: {
-                      slidesPerView: 1.35,
-                    },
-                  }}
-                  className="!overflow-visible"
+              <div ref={journeyMobileStageRef} className="relative mt-12 overflow-hidden">
+                <div
+                  ref={journeyMobileTrackRef}
+                  className="flex w-max items-stretch gap-4 pb-4 pr-[18vw]"
                 >
                   {processSteps.map((step) => (
-                    <SwiperSlide key={step.number}>
-                      <article className="gradient-outline relative min-h-[21rem] overflow-hidden rounded-[30px] bg-[linear-gradient(180deg,rgba(40,27,51,0.92),rgba(21,13,30,0.96))] p-7 backdrop-blur-xl">
-                        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/8 font-display text-2xl text-white">
-                          {step.number}
-                        </div>
-                        <h3 className="mt-8 font-display text-3xl font-medium tracking-[-0.04em] text-white">
-                          {step.title}
-                        </h3>
-                        <p className="mt-5 text-base leading-8 text-[#ddd1ea]">{step.copy}</p>
-                      </article>
-                    </SwiperSlide>
+                    <div key={step.number} className="w-[84vw] max-w-[22rem] shrink-0">
+                      <JourneyPanel step={step} />
+                    </div>
                   ))}
 
-                  <SwiperSlide>
-                    <article className="gradient-outline relative min-h-[21rem] overflow-hidden rounded-[30px] bg-[linear-gradient(180deg,rgba(40,27,51,0.92),rgba(21,13,30,0.96))] p-7 backdrop-blur-xl">
-                      <SectionPill>Ready to start</SectionPill>
-                      <h3 className="mt-6 font-display text-3xl font-medium tracking-[-0.04em] text-white">
-                        Ready for clear monthly numbers, better decisions, and a more
-                        controlled finance function?
-                      </h3>
-                      <p className="mt-5 text-base leading-8 text-[#ddd1ea]">
-                        Cuno helps founder-led businesses and growing teams build a more
-                        controlled finance function without forcing an early full-time
-                        hire.
-                      </p>
-                      <a href="#contact" className={`${darkButton} mt-8`}>
-                        Book a consultation
-                        <ArrowRight className="h-4 w-4" />
-                      </a>
-                    </article>
-                  </SwiperSlide>
-                </Swiper>
-
-                <div className="mt-8 flex items-center justify-center gap-4">
-                  <ControlButton
-                    label="Previous journey step"
-                    icon="left"
-                    onClick={() => {
-                      journeySwiper?.slidePrev()
-                    }}
-                  />
-                  <ControlButton
-                    label="Next journey step"
-                    icon="right"
-                    onClick={() => {
-                      journeySwiper?.slideNext()
-                    }}
-                  />
+                  <div className="w-[88vw] max-w-[24rem] shrink-0">
+                    <JourneyReadyPanel className="min-h-[21rem]" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div ref={journeyTrackRef} className="hidden lg:flex lg:w-max lg:items-center lg:gap-8 lg:px-[6vw] lg:py-20">
+          <div
+            ref={journeyTrackRef}
+            className="hidden lg:flex lg:w-max lg:items-center lg:gap-10 lg:px-[7vw] lg:py-28"
+          >
             <div className="w-[28rem] shrink-0">
               <SectionPill>How it works</SectionPill>
               <h2 className="mt-6 max-w-[24rem] font-display text-[4.2rem] font-bold leading-[0.93] tracking-[-0.06em] text-white">
@@ -1203,37 +1300,15 @@ function App() {
               </p>
             </div>
 
-            {processSteps.map((step, index) => (
-              <article
+            {processSteps.map((step) => (
+              <JourneyPanel
                 key={step.number}
-                className={`journey-card-desktop gradient-outline relative min-h-[23rem] w-[24rem] shrink-0 overflow-hidden rounded-[30px] bg-[linear-gradient(180deg,rgba(42,28,52,0.9),rgba(23,14,32,0.94))] p-8 backdrop-blur-xl ${
-                  index % 2 === 0 ? 'translate-y-[-2rem]' : 'translate-y-[4.5rem]'
-                }`}
-              >
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/8 font-display text-3xl text-white">
-                  {step.number}
-                </div>
-                <h3 className="mt-8 font-display text-[2.2rem] font-medium leading-tight tracking-[-0.045em] text-white">
-                  {step.title}
-                </h3>
-                <p className="mt-5 text-[1.05rem] leading-8 text-[#ddd1ea]">{step.copy}</p>
-              </article>
+                step={step}
+                className="w-[24rem] shrink-0"
+              />
             ))}
 
-            <article className="gradient-outline relative w-[28rem] shrink-0 overflow-hidden rounded-[34px] bg-[linear-gradient(180deg,rgba(42,28,52,0.9),rgba(23,14,32,0.94))] p-8 backdrop-blur-xl">
-              <SectionPill>Ready to start</SectionPill>
-              <h3 className="mt-6 max-w-[22rem] font-display text-[2.6rem] font-medium leading-tight tracking-[-0.045em] text-white">
-                Ready for clear monthly numbers, better decisions, and a more controlled finance function?
-              </h3>
-              <p className="mt-5 max-w-[23rem] text-[1.05rem] leading-8 text-[#ddd1ea]">
-                Cuno helps growing businesses improve monthly visibility through Senior
-                Finance Support, Management Reporting, and Cashflow Forecasting.
-              </p>
-              <a href="#contact" className={`${darkButton} mt-8`}>
-                Book a consultation
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </article>
+            <JourneyReadyPanel className="w-[28rem] shrink-0" />
           </div>
         </section>
 
@@ -1263,7 +1338,7 @@ function App() {
               </div>
             </div>
 
-            <div className="mt-14 flex items-center justify-end gap-4">
+            <div className="mt-14 hidden items-center justify-end gap-4 lg:flex">
               <ControlButton
                 label="Previous benefit"
                 icon="left"
@@ -1280,51 +1355,48 @@ function App() {
               />
             </div>
 
-            <div className="mt-8">
+            <div
+              ref={benefitsMobilePinRef}
+              className="mt-10 lg:hidden"
+            >
+              <div ref={benefitsMobileStageRef} className="overflow-hidden">
+                <div
+                  ref={benefitsMobileTrackRef}
+                  className="flex w-max items-stretch gap-4 pb-4 pr-[18vw]"
+                >
+                  {benefitSlides.map((slide) => (
+                    <div key={slide.title} className="w-[84vw] max-w-[22rem] shrink-0">
+                      <BenefitPanel slide={slide} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 hidden lg:block">
               <Swiper
                 onSwiper={setBenefitSwiper}
                 onSlideChange={(swiper) => {
                   setActiveBenefit(swiper.activeIndex)
                 }}
                 slidesPerView={1.08}
-                centeredSlides
+                centeredSlides={false}
                 spaceBetween={22}
                 breakpoints={{
                   760: {
                     slidesPerView: 1.45,
+                    centeredSlides: false,
                   },
                   1100: {
                     slidesPerView: 2.4,
+                    centeredSlides: false,
                   },
                 }}
                 className="benefits-swiper !overflow-visible"
               >
                 {benefitSlides.map((slide, index) => (
                   <SwiperSlide key={slide.title}>
-                    <article
-                      className={`gradient-outline relative flex h-full min-h-[34rem] flex-col justify-between overflow-hidden rounded-[34px] bg-white/[0.055] p-7 transition-all duration-500 md:p-8 ${
-                        activeBenefit === index
-                          ? 'translate-y-[-1rem] opacity-100'
-                          : 'translate-y-[2.5rem] opacity-45'
-                      }`}
-                    >
-                      <div>
-                        <h3 className="font-display text-[2rem] font-medium leading-tight tracking-[-0.04em] text-white">
-                          {slide.title}
-                        </h3>
-                        <p className="mt-5 text-[1.05rem] leading-8 text-[#ddd1ea]">{slide.copy}</p>
-                      </div>
-                      <div>
-                        <div className="rounded-[18px] border border-white/8 bg-white/[0.05] px-4 py-3 text-sm text-[#efe3ff]">
-                          {slide.impact}
-                        </div>
-                        <img
-                          src={slide.image}
-                          alt=""
-                          className="mt-8 h-52 w-full object-contain object-center"
-                        />
-                      </div>
-                    </article>
+                    <BenefitPanel slide={slide} active={activeBenefit === index} />
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -1333,6 +1405,7 @@ function App() {
         </section>
 
         <section className="relative overflow-hidden bg-[#120419] py-24 text-white md:py-32">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(148,72,214,0.24),transparent_44%),linear-gradient(180deg,rgba(15,37,55,0.06),rgba(9,22,34,0.18))]" />
           <div className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-[radial-gradient(circle_at_top,rgba(148,72,214,0.22),transparent_62%)]" />
           <div className="mx-auto w-full max-w-7xl px-6 md:px-10">
             <div className="mx-auto max-w-3xl text-center">
@@ -1343,12 +1416,18 @@ function App() {
             </div>
 
             <div className="mt-14 grid gap-6 lg:grid-cols-[0.26fr_0.48fr_0.26fr] lg:items-start">
-              <div className="grid gap-4">
-                {activeCaseItem.stats.map(([title, copy]) => (
+              <div className="grid justify-items-center gap-4 lg:justify-items-stretch">
+                {activeCaseItem.stats.map(([title, copy], index) => (
                   <div
                     key={title}
                     data-reveal
-                    className="rounded-[28px] border border-white/10 bg-white/[0.03] px-5 py-6"
+                    className={`w-full rounded-[28px] border border-white/10 bg-white/[0.03] px-5 py-6 ${
+                      index === 0
+                        ? 'max-w-[16rem] lg:max-w-none'
+                        : index === 1
+                          ? 'max-w-[13.75rem] lg:max-w-none'
+                          : 'max-w-[11.5rem] lg:max-w-none'
+                    }`}
                   >
                     <div className="font-display text-4xl tracking-[-0.05em] text-[#e0bfff]">
                       {title}
@@ -1391,7 +1470,9 @@ function App() {
 
                 <div className="mt-6 border-t border-white/8 pt-6">
                   <div className="text-sm uppercase tracking-[0.28em] text-lilac">What improves</div>
-                  <p className="mt-3 text-[1.05rem] leading-8 text-[#ddd1ea]">{activeCaseItem.change}</p>
+                  <p className="mt-3 text-[1.05rem] font-semibold leading-8 text-[#ddd1ea]">
+                    {activeCaseItem.change}
+                  </p>
                 </div>
               </motion.article>
 
@@ -1400,7 +1481,7 @@ function App() {
                 initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.28 }}
-                className="rounded-[30px] border border-white/10 bg-white/[0.04] p-7"
+                className="mx-auto w-full max-w-[21rem] rounded-[30px] border border-white/10 bg-white/[0.04] p-7 lg:mx-0 lg:max-w-none"
               >
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/8 font-display text-4xl text-[#d7bbf2]">
                   “

@@ -29,10 +29,9 @@ Published V2 live text variant:
 - entry: `v2/index.html` via `src/v2-main.tsx`
 - route: `/v2/`
 
-Third design version (Apple-style refresh):
+Published V3 live layout variant:
 
-- source: `src/AppV3.tsx`
-- styles: `src/v3.css`
+- source: `src/AppV3Live.tsx`
 - entry: `v3/index.html` via `src/v3-main.tsx`
 - route: `/v3/`
 

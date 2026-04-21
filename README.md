@@ -23,9 +23,10 @@ V1C published alias:
 - entry: `v1c/index.html` via `src/v1c-main.tsx`
 - route: `/v1c/`
 
-Second design version:
+Published V2 live text variant:
 
-- source: `src/AppV2.tsx`
+- source: `src/AppV2Live.tsx`
+- entry: `v2/index.html` via `src/v2-main.tsx`
 - route: `/v2/`
 
 Third design version (Apple-style refresh):

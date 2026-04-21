@@ -6,16 +6,16 @@ import '@fontsource/space-grotesk/500.css'
 import '@fontsource/space-grotesk/700.css'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import AppV2 from '@/AppV2.tsx'
+import AppV2Live from '@/AppV2Live.tsx'
 import '@/lib/gsap.ts'
 import { SmoothScrollProvider } from '@/providers/SmoothScrollProvider.tsx'
 import './index.css'
-import './v2.css'
+import './v5.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <SmoothScrollProvider>
-      <AppV2 />
+      <AppV2Live />
     </SmoothScrollProvider>
   </StrictMode>,
 )

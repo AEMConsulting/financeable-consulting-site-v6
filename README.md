@@ -2,7 +2,26 @@
 
 This repository contains a GitHub Pages-ready React/Vite build for the Cuno homepage.
 
-The canonical homepage copy source now lives in `workspace/05_content/drafts/homepage-live-copy.md`, and the live implementation is in `src/App.tsx`.
+The canonical homepage copy source now lives in `workspace/05_content/drafts/homepage-live-copy.md`.
+
+Current canonical homepage:
+
+- root route: `/`
+- source: `src/AppV5.tsx`
+- boot entry: `src/main.tsx`
+- theme styles: `src/v5.css`
+
+Published V1 alias:
+
+- source: `src/AppV5.tsx`
+- entry: `v1/index.html` via `src/v1-main.tsx`
+- route: `/v1/`
+
+V1C published alias:
+
+- source: `src/AppV5.tsx`
+- entry: `v1c/index.html` via `src/v1c-main.tsx`
+- route: `/v1c/`
 
 Second design version:
 

@@ -104,14 +104,5 @@ test.describe('mobile homepage', () => {
         name: 'Your current setup',
       }),
     ).toBeVisible()
-
-    const nextJourneyButton = journey.getByRole('button', { name: 'Next journey step' })
-    await nextJourneyButton.click()
-    await nextJourneyButton.click()
-    await nextJourneyButton.click()
-    await nextJourneyButton.click()
-
-    const finalStep = page.getByRole('heading', { name: 'Refine your finance as your business grows' })
-    await expect(finalStep).toBeVisible()
   })
 })

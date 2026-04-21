@@ -21,53 +21,44 @@ const journeyMark = toDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="
 </svg>`)
 const benefitVisuals = [
   toDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" fill="none">
-    <circle cx="92" cy="74" r="34" fill="#EFF8F7"/>
-    <path d="M42 140H178" stroke="#73DDD3" stroke-width="8" stroke-linecap="round"/>
-    <path d="M198 118C226 118 248 140 248 168" stroke="#2B8D88" stroke-width="10" stroke-linecap="round"/>
-    <circle cx="248" cy="168" r="9" fill="#2B8D88"/>
-    <path d="M294 114H432" stroke="#C2D3DB" stroke-width="4" stroke-dasharray="10 12"/>
-    <path d="M294 168H474" stroke="#C2D3DB" stroke-width="4" stroke-dasharray="10 12"/>
-    <circle cx="454" cy="114" r="9" fill="#E5EEF1"/>
-    <circle cx="506" cy="168" r="9" fill="#E5EEF1"/>
+    <rect x="72" y="42" width="496" height="176" rx="34" fill="#EEF6F8" stroke="#C9DAE2"/>
+    <rect x="106" y="76" width="132" height="108" rx="24" fill="#DDEDF1" stroke="#BFD2DB"/>
+    <rect x="148" y="110" width="94" height="56" rx="18" fill="#FFFFFF" stroke="#C9DAE2"/>
+    <path d="M168 138H220" stroke="#16354A" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="174" cy="88" r="18" fill="#79E5D7"/>
+    <path d="M284 106H474" stroke="#CBD9DF" stroke-width="4" stroke-dasharray="10 12"/>
+    <path d="M284 152H502" stroke="#CBD9DF" stroke-width="4" stroke-dasharray="10 12"/>
+    <circle cx="502" cy="106" r="10" fill="#D9E7EC"/>
+    <circle cx="530" cy="152" r="10" fill="#D9E7EC"/>
   </svg>`),
   toDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" fill="none">
-    <path d="M70 126H520" stroke="#C7D7DE" stroke-width="4" stroke-dasharray="10 12"/>
-    <path d="M236 62V198" stroke="url(#lineA)" stroke-width="5"/>
-    <path d="M382 72V190" stroke="url(#lineB)" stroke-width="5"/>
-    <circle cx="126" cy="86" r="28" fill="#F6FBFA"/>
-    <circle cx="282" cy="80" r="24" fill="#BDEFE8"/>
-    <circle cx="432" cy="148" r="18" fill="#DCE9EE"/>
-    <defs>
-      <linearGradient id="lineA" x1="236" y1="62" x2="236" y2="198" gradientUnits="userSpaceOnUse">
-        <stop stop-color="transparent"/><stop offset=".5" stop-color="#9FDCD8"/><stop offset="1" stop-color="transparent"/>
-      </linearGradient>
-      <linearGradient id="lineB" x1="382" y1="72" x2="382" y2="190" gradientUnits="userSpaceOnUse">
-        <stop stop-color="transparent"/><stop offset=".5" stop-color="#79B7C6"/><stop offset="1" stop-color="transparent"/>
-      </linearGradient>
-    </defs>
+    <rect x="74" y="42" width="492" height="176" rx="34" fill="#EEF6F8" stroke="#C9DAE2"/>
+    <rect x="106" y="70" width="114" height="118" rx="24" fill="#DDEDF1" stroke="#BFD2DB"/>
+    <rect x="258" y="70" width="128" height="118" rx="24" fill="#FFFFFF" stroke="#C9DAE2"/>
+    <rect x="420" y="70" width="112" height="118" rx="24" fill="#F8FCFC" stroke="#D4E1E7"/>
+    <path d="M288 110H356" stroke="#16354A" stroke-width="6" stroke-linecap="round"/>
+    <path d="M288 144H366" stroke="#79E5D7" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="162" cy="98" r="16" fill="#79E5D7"/>
+    <circle cx="476" cy="98" r="14" fill="#D9E7EC"/>
   </svg>`),
   toDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" fill="none">
-    <path d="M74 82H210" stroke="#7BE3D9" stroke-width="8" stroke-linecap="round"/>
-    <path d="M266 68V190" stroke="url(#speed)" stroke-width="5"/>
-    <path d="M356 92H532" stroke="#B9CCD6" stroke-width="4" stroke-dasharray="10 12"/>
-    <circle cx="126" cy="64" r="26" fill="#F5FBFB"/>
-    <circle cx="478" cy="92" r="10" fill="#DDE7EB"/>
-    <path d="M332 132H566" stroke="#C5D6DE" stroke-width="4" stroke-dasharray="10 12"/>
-    <circle cx="552" cy="132" r="10" fill="#DDE7EB"/>
-    <defs>
-      <linearGradient id="speed" x1="266" y1="68" x2="266" y2="190" gradientUnits="userSpaceOnUse">
-        <stop stop-color="transparent"/><stop offset=".52" stop-color="#CFE6EC"/><stop offset="1" stop-color="transparent"/>
-      </linearGradient>
-    </defs>
+    <rect x="72" y="42" width="496" height="176" rx="34" fill="#EEF6F8" stroke="#C9DAE2"/>
+    <rect x="110" y="74" width="150" height="110" rx="24" fill="#DDEDF1" stroke="#BFD2DB"/>
+    <path d="M136 112H220" stroke="#79E5D7" stroke-width="8" stroke-linecap="round"/>
+    <path d="M296 76V188" stroke="#C7D6DD" stroke-width="4" stroke-dasharray="8 10"/>
+    <rect x="334" y="90" width="168" height="78" rx="24" fill="#FFFFFF" stroke="#C9DAE2"/>
+    <path d="M364 122H452" stroke="#16354A" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="468" cy="122" r="14" fill="#79E5D7"/>
   </svg>`),
   toDataUri(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" fill="none">
-    <rect x="70" y="46" width="222" height="108" rx="22" fill="#F8FCFC" stroke="#D7E5EA"/>
-    <rect x="112" y="78" width="222" height="108" rx="22" fill="#FFFFFF" fill-opacity=".92" stroke="#D7E5EA"/>
-    <rect x="154" y="108" width="246" height="112" rx="24" fill="#FFFFFF" stroke="#D1E1E7"/>
-    <rect x="118" y="132" width="206" height="50" rx="18" fill="#FFFFFF" stroke="#D7E5EA"/>
-    <path d="M144 156H272" stroke="#2B8D88" stroke-width="6" stroke-linecap="round"/>
-    <circle cx="492" cy="82" r="22" fill="#E4F6F4"/>
-    <circle cx="542" cy="146" r="16" fill="#D8E7EC"/>
+    <rect x="70" y="42" width="500" height="176" rx="34" fill="#EEF6F8" stroke="#C9DAE2"/>
+    <rect x="96" y="66" width="206" height="104" rx="24" fill="#DDEDF1" stroke="#BFD2DB"/>
+    <rect x="136" y="96" width="214" height="104" rx="24" fill="#FFFFFF" stroke="#D1E1E7"/>
+    <rect x="176" y="126" width="238" height="76" rx="24" fill="#FFFFFF" stroke="#D7E5EA"/>
+    <path d="M204 154H332" stroke="#16354A" stroke-width="6" stroke-linecap="round"/>
+    <path d="M204 176H286" stroke="#79E5D7" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="494" cy="94" r="20" fill="#E4F6F4"/>
+    <circle cx="530" cy="154" r="16" fill="#D8E7EC"/>
   </svg>`),
 ]
 

@@ -51,7 +51,6 @@ const trustChips = [
   'Senior Finance Support',
   'Management Reporting',
   'Cashflow Forecasting',
-  'London-focused support',
 ] as const
 
 const heroPoints = [
@@ -176,7 +175,7 @@ const benefitSlides = [
 
 const caseStudies = [
   {
-    tags: ['Founder-led', 'Monthly Senior Finance Support', 'London'],
+    tags: ['Founder-led', 'Monthly Senior Finance Support', 'Clarity'],
     title: 'Timely, relevant reporting',
     challenge:
       'Reporting arrives late, with limited visibility for planning and decision-making. Everything starts to feel like guesswork.',
@@ -461,10 +460,10 @@ function JourneyReadyPanel({ className = '' }: { className?: string }) {
       className={`gradient-outline relative overflow-hidden rounded-[34px] bg-[linear-gradient(180deg,rgba(42,28,52,0.9),rgba(23,14,32,0.94))] p-7 backdrop-blur-xl md:p-8 ${className}`}
     >
       <SectionPill>Ready to start</SectionPill>
-      <h3 className="mt-6 font-display text-3xl font-medium tracking-[-0.04em] text-white md:max-w-[22rem] md:text-[2.6rem] md:leading-tight md:tracking-[-0.045em]">
+      <h3 className="mt-6 font-display text-[1.9rem] font-medium leading-tight tracking-[-0.04em] text-white md:max-w-[21rem] md:text-[2.35rem] md:tracking-[-0.045em]">
         Ready for clear monthly numbers, better decisions, and a more controlled finance function?
       </h3>
-      <p className="mt-5 text-base leading-8 text-[#ddd1ea] md:max-w-[23rem] md:text-[1.05rem]">
+      <p className="mt-4 text-[0.96rem] leading-7 text-[#ddd1ea] md:max-w-[22rem] md:text-[1rem] md:leading-8">
         Cuno helps growing businesses improve monthly visibility through Senior
         Finance Support, Management Reporting, and Cashflow Forecasting.
       </p>
@@ -1276,7 +1275,7 @@ function App() {
                     </div>
                   ))}
 
-                  <div className="w-[88vw] max-w-[24rem] shrink-0">
+                  <div className="w-[80vw] max-w-[20rem] shrink-0">
                     <JourneyReadyPanel className="min-h-[21rem]" />
                   </div>
                 </div>
@@ -1286,7 +1285,7 @@ function App() {
 
           <div
             ref={journeyTrackRef}
-            className="hidden lg:flex lg:w-max lg:items-center lg:gap-10 lg:px-[7vw] lg:py-28"
+            className="hidden lg:flex lg:w-max lg:items-center lg:gap-10 lg:px-[7vw] lg:pt-36 lg:pb-24"
           >
             <div className="w-[28rem] shrink-0">
               <SectionPill>How it works</SectionPill>
@@ -1308,7 +1307,7 @@ function App() {
               />
             ))}
 
-            <JourneyReadyPanel className="w-[28rem] shrink-0" />
+            <JourneyReadyPanel className="mt-8 w-[24rem] shrink-0 self-center" />
           </div>
         </section>
 
@@ -1404,9 +1403,9 @@ function App() {
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-[#120419] py-24 text-white md:py-32">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(148,72,214,0.24),transparent_44%),linear-gradient(180deg,rgba(15,37,55,0.06),rgba(9,22,34,0.18))]" />
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-[radial-gradient(circle_at_top,rgba(148,72,214,0.22),transparent_62%)]" />
+        <section className="v5-outcomes-section relative overflow-hidden bg-[#120419] py-24 text-white md:py-32">
+          <div className="v5-outcomes-full-glow pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(148,72,214,0.24),transparent_44%),linear-gradient(180deg,rgba(15,37,55,0.06),rgba(9,22,34,0.18))]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(148,72,214,0.22),transparent_68%)]" />
           <div className="mx-auto w-full max-w-7xl px-6 md:px-10">
             <div className="mx-auto max-w-3xl text-center">
               <SectionPill>Operating outcomes</SectionPill>
@@ -1416,17 +1415,17 @@ function App() {
             </div>
 
             <div className="mt-14 grid gap-6 lg:grid-cols-[0.26fr_0.48fr_0.26fr] lg:items-start">
-              <div className="grid justify-items-center gap-4 lg:justify-items-stretch">
+              <div className="grid gap-4 lg:justify-items-stretch">
                 {activeCaseItem.stats.map(([title, copy], index) => (
                   <div
                     key={title}
                     data-reveal
                     className={`w-full rounded-[28px] border border-white/10 bg-white/[0.03] px-5 py-6 ${
                       index === 0
-                        ? 'max-w-[16rem] lg:max-w-none'
+                        ? 'max-w-full lg:max-w-[16rem]'
                         : index === 1
-                          ? 'max-w-[13.75rem] lg:max-w-none'
-                          : 'max-w-[11.5rem] lg:max-w-none'
+                          ? 'max-w-full lg:max-w-[13.75rem]'
+                          : 'max-w-full lg:max-w-[11.5rem]'
                     }`}
                   >
                     <div className="font-display text-4xl tracking-[-0.05em] text-[#e0bfff]">

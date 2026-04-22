@@ -29,7 +29,7 @@ Published V2 live text variant:
 - entry: `v2/index.html` via `src/v2-main.tsx`
 - route: `/v2/`
 
-Published V3 live layout variant:
+Published V3 live CTA and capability variant:
 
 - source: `src/AppV3Live.tsx`
 - entry: `v3/index.html` via `src/v3-main.tsx`

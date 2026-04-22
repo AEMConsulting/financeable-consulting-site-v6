@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test'
 
-test('design version three loads the reordered live layout with outcomes before Why Cuno', async ({ page }) => {
+test('design version three loads the v2-derived hero update and capability pills', async ({ page }) => {
   await page.goto('/v3/')
 
   await expect(
@@ -9,22 +9,17 @@ test('design version three loads the reordered live layout with outcomes before 
     }),
   ).toBeVisible()
 
-  const outcomesHeading = page.getByRole('heading', {
-    name: 'Finance support that delivers operating control.',
-  })
-  const whyHeading = page.getByRole('heading', {
-    name: 'More than reporting, less than a full-time senior finance hire.',
-  })
+  await expect(
+    page.getByText('No retainer or commitment required. First conversation is exploratory.'),
+  ).toBeVisible()
 
-  await expect(outcomesHeading).toBeVisible()
-  await expect(whyHeading).toBeVisible()
+  await expect(
+    page.locator('#features article.feature-card').getByRole('link', { name: 'Explore more' }),
+  ).toHaveCount(3)
 
-  const outcomesBox = await outcomesHeading.boundingBox()
-  const whyBox = await whyHeading.boundingBox()
-
-  expect(outcomesBox).not.toBeNull()
-  expect(whyBox).not.toBeNull()
-  expect((outcomesBox?.y ?? 0) < (whyBox?.y ?? 0)).toBe(true)
-
-  await expect(page.locator('#benefits .swiper-slide')).toHaveCount(4)
+  await expect(
+    page.locator('.v5-hero-consultation-card').getByText(
+      'No retainer or commitment required. First conversation is exploratory.',
+    ),
+  ).toHaveCount(0)
 })

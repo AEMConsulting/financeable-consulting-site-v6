@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import AppV2Live from '@/AppV2Live.tsx'
 
-function applyV3LayoutVariant(root: HTMLDivElement | null) {
+function applyV3Variant(root: HTMLDivElement | null) {
   if (!root) {
     return
   }
@@ -14,14 +14,47 @@ function applyV3LayoutVariant(root: HTMLDivElement | null) {
 
   theme.classList.add('v3-live-variant')
 
-  const main = theme.querySelector<HTMLElement>('main')
-  const benefitsSection = theme.querySelector<HTMLElement>('#benefits')
-  const outcomesSection = Array.from(theme.querySelectorAll<HTMLElement>('main > section')).find(
-    (section) => section.textContent?.includes('Finance support that delivers operating control.'),
-  )
+  const heroSection = theme.querySelector<HTMLElement>('main section:first-of-type')
 
-  if (main && benefitsSection && outcomesSection && benefitsSection.previousElementSibling !== outcomesSection) {
-    main.insertBefore(outcomesSection, benefitsSection)
+  if (heroSection) {
+    const heroGrid = heroSection.querySelector<HTMLElement>(':scope > .mx-auto.grid')
+    const heroLeftColumn = heroGrid?.firstElementChild as HTMLElement | null
+    const heroMetrics = heroLeftColumn?.querySelector<HTMLElement>('.mt-10.grid.gap-4.sm\\:grid-cols-3')
+    const heroCtaCard =
+      heroGrid?.querySelector<HTMLElement>('.v2-live-hero-cta-card, .v5-hero-consultation-card') ?? null
+
+    const cardDisclaimer = Array.from(
+      heroCtaCard?.querySelectorAll<HTMLElement>('div, p, span') ?? [],
+    ).find((node) =>
+      node.textContent?.includes('No retainer or commitment required. First conversation is exploratory.'),
+    )
+
+    cardDisclaimer?.remove()
+
+    if (heroMetrics && !heroLeftColumn?.querySelector('.v3-hero-note')) {
+      const note = document.createElement('div')
+      note.className = 'v3-hero-note mt-6 text-sm'
+      note.textContent = 'No retainer or commitment required. First conversation is exploratory.'
+      heroMetrics.insertAdjacentElement('afterend', note)
+    }
+  }
+
+  theme.querySelectorAll<HTMLElement>('#features article.feature-card').forEach((card) => {
+    if (card.querySelector('.v3-feature-link')) {
+      return
+    }
+
+    const pill = document.createElement('a')
+    pill.className = 'v3-feature-link'
+    pill.href = '#contact'
+    pill.textContent = 'Explore more'
+    card.appendChild(pill)
+  })
+
+  const benefitsSection = theme.querySelector<HTMLElement>('#benefits')
+
+  if (benefitsSection) {
+    benefitsSection.classList.remove('v3-benefits-grid')
   }
 }
 
@@ -37,7 +70,7 @@ function AppV3Live() {
 
     const apply = () => {
       window.requestAnimationFrame(() => {
-        applyV3LayoutVariant(root)
+        applyV3Variant(root)
       })
     }
 

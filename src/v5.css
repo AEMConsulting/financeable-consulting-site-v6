@@ -702,11 +702,6 @@
   letter-spacing: 0.34em !important;
 }
 
-.v5-theme.v3-live-variant .v3-hero-cta-intro {
-  margin-top: 0.85rem !important;
-  max-width: 24rem !important;
-}
-
 .v5-theme.v3-live-variant .v2-live-hero-cta-card label {
   gap: 0.45rem !important;
 }

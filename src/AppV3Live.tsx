@@ -27,8 +27,10 @@ function applyV3Variant(root: HTMLDivElement | null) {
 
     const cardDisclaimer = Array.from(
       heroCtaCard?.querySelectorAll<HTMLElement>('div, p, span') ?? [],
-    ).find((node) =>
-      node.textContent?.includes('No retainer or commitment required. First conversation is exploratory.'),
+    ).find(
+      (node) =>
+        node.children.length === 0 &&
+        node.textContent?.trim() === 'No retainer or commitment required. First conversation is exploratory.',
     )
 
     cardDisclaimer?.remove()
@@ -41,14 +43,7 @@ function applyV3Variant(root: HTMLDivElement | null) {
     }
 
     const ctaEyebrow = heroCtaInner?.firstElementChild as HTMLElement | null
-    const ctaTitle = Array.from(heroCtaInner?.querySelectorAll<HTMLElement>('h1, h2, h3') ?? []).find((node) =>
-      node.textContent?.trim().toLowerCase().includes('book a consultation'),
-    )
-    const ctaIntro = ctaTitle?.nextElementSibling as HTMLElement | null
-
     ctaEyebrow?.classList.add('v3-hero-cta-kicker')
-    ctaTitle?.remove()
-    ctaIntro?.classList.add('v3-hero-cta-intro')
   }
 }
 

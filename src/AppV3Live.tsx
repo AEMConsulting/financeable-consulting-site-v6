@@ -21,7 +21,9 @@ function applyV3Variant(root: HTMLDivElement | null) {
     const heroLeftColumn = heroGrid?.firstElementChild as HTMLElement | null
     const heroMetrics = heroLeftColumn?.querySelector<HTMLElement>('.mt-10.grid.gap-4.sm\\:grid-cols-3')
     const heroCtaCard =
-      heroGrid?.querySelector<HTMLElement>('.v2-live-hero-cta-card, .v5-hero-consultation-card') ?? null
+      heroGrid?.querySelector<HTMLElement>('.v2-live-hero-cta-card, .v5-hero-consultation-card') ??
+      null
+    const heroCtaInner = heroCtaCard?.querySelector<HTMLElement>(':scope > .relative > .relative') ?? null
 
     const cardDisclaimer = Array.from(
       heroCtaCard?.querySelectorAll<HTMLElement>('div, p, span') ?? [],
@@ -37,24 +39,16 @@ function applyV3Variant(root: HTMLDivElement | null) {
       note.textContent = 'No retainer or commitment required. First conversation is exploratory.'
       heroMetrics.insertAdjacentElement('afterend', note)
     }
-  }
 
-  theme.querySelectorAll<HTMLElement>('#features article.feature-card').forEach((card) => {
-    if (card.querySelector('.v3-feature-link')) {
-      return
-    }
+    const ctaEyebrow = heroCtaInner?.firstElementChild as HTMLElement | null
+    const ctaTitle = Array.from(heroCtaInner?.querySelectorAll<HTMLElement>('h1, h2, h3') ?? []).find((node) =>
+      node.textContent?.trim().toLowerCase().includes('book a consultation'),
+    )
+    const ctaIntro = ctaTitle?.nextElementSibling as HTMLElement | null
 
-    const pill = document.createElement('a')
-    pill.className = 'v3-feature-link'
-    pill.href = '#contact'
-    pill.textContent = 'Explore more'
-    card.appendChild(pill)
-  })
-
-  const benefitsSection = theme.querySelector<HTMLElement>('#benefits')
-
-  if (benefitsSection) {
-    benefitsSection.classList.remove('v3-benefits-grid')
+    ctaEyebrow?.classList.add('v3-hero-cta-kicker')
+    ctaTitle?.remove()
+    ctaIntro?.classList.add('v3-hero-cta-intro')
   }
 }
 

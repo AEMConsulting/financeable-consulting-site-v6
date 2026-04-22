@@ -663,87 +663,12 @@
   min-height: 100%;
 }
 
-.v5-theme.v3-live-variant #benefits .mt-14.flex.items-center.justify-end.gap-4,
-.v5-theme.v3-live-variant #benefits .lg\:hidden,
-.v5-theme.v3-live-variant #benefits .v5-benefits-controls {
-  display: flex !important;
-}
-
-.v5-theme.v3-live-variant #benefits .benefits-swiper {
-  margin-top: 3.5rem;
-  overflow: visible !important;
-}
-
-.v5-theme.v3-live-variant #benefits .benefits-swiper .swiper-wrapper {
-  display: flex !important;
-  gap: 0 !important;
-  grid-template-columns: none !important;
-  transform: var(--swiper-wrapper-transform, none) !important;
-}
-
-.v5-theme.v3-live-variant #benefits .benefits-swiper .swiper-slide {
-  height: auto !important;
-  margin-right: 0 !important;
-  width: 100% !important;
-}
-
-.v5-theme.v3-live-variant #benefits .benefits-swiper .swiper-slide article {
-  min-height: 31rem !important;
-}
-
-.v5-theme.v3-live-variant #benefits .v5-benefit-card {
-  box-shadow: 0 24px 64px rgba(8, 21, 34, 0.08) !important;
-}
-
-.v5-theme.v3-live-variant #benefits .v5-benefit-art {
-  background:
-    radial-gradient(circle at top right, rgba(118, 221, 213, 0.14), transparent 34%),
-    linear-gradient(180deg, #dff0f1, #c9dee4) !important;
-  border-color: rgba(102, 129, 148, 0.14) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.48),
-    0 16px 28px rgba(8, 21, 34, 0.05) !important;
-  transition:
-    transform 220ms ease,
-    box-shadow 220ms ease;
-}
-
-.v5-theme.v3-live-variant #benefits .v5-benefit-card:hover .v5-benefit-art {
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.52),
-    0 20px 36px rgba(8, 21, 34, 0.08) !important;
-  transform: translateY(-4px);
-}
-
-@media (max-width: 767px) {
-  .v5-theme.v3-live-variant #benefits .benefits-swiper .swiper-slide article {
-    min-height: 22rem !important;
-    padding: 1rem !important;
-  }
-
-  .v5-theme.v3-live-variant #benefits .benefits-swiper .swiper-slide h3 {
-    font-size: 1.25rem !important;
-    line-height: 1.1 !important;
-  }
-
-  .v5-theme.v3-live-variant #benefits .benefits-swiper .swiper-slide p {
-    font-size: 0.84rem !important;
-    line-height: 1.5 !important;
-  }
-
-  .v5-theme.v3-live-variant #benefits .v5-benefit-art {
-    border-radius: 20px;
-    height: 9.5rem !important;
-    padding: 0.55rem;
-  }
-}
-
 .v5-theme.v3-live-variant .v2-live-hero-grid {
-  align-items: stretch !important;
+  align-items: start !important;
 }
 
 .v5-theme.v3-live-variant .v2-live-hero-cta-shell {
-  align-self: stretch;
+  align-self: start;
   display: flex;
   padding-top: 0 !important;
 }
@@ -751,55 +676,66 @@
 .v5-theme.v3-live-variant .v2-live-hero-cta-card {
   display: flex;
   flex: 1 1 auto;
-  min-height: 100%;
 }
 
 .v5-theme.v3-live-variant .v2-live-hero-cta-card > .relative {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  min-height: 100%;
 }
 
 .v5-theme.v3-live-variant .v2-live-hero-cta-card form {
   flex: 1 1 auto;
   align-content: start;
+  gap: 0.85rem !important;
+  margin-top: 1.15rem !important;
 }
 
 .v5-theme.v3-live-variant .v3-hero-note {
   color: #bdd2dd !important;
 }
 
-.v5-theme.v3-live-variant #features .v5-feature-card {
-  display: flex;
-  flex-direction: column;
+.v5-theme.v3-live-variant .v3-hero-cta-kicker {
+  color: #eef2f4 !important;
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.34em !important;
 }
 
-.v5-theme.v3-live-variant #features .v3-feature-link {
-  align-self: flex-start;
-  margin-top: 1.5rem;
-  display: inline-flex;
-  align-items: center;
-  border-radius: 999px;
-  border: 1px solid rgba(83, 132, 165, 0.22);
-  background: rgba(15, 31, 45, 0.06);
-  color: #16354a;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  padding: 0.82rem 1.15rem;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition:
-    transform 160ms ease,
-    background-color 160ms ease,
-    border-color 160ms ease;
+.v5-theme.v3-live-variant .v3-hero-cta-intro {
+  margin-top: 0.85rem !important;
+  max-width: 24rem !important;
 }
 
-.v5-theme.v3-live-variant #features .v3-feature-link:hover {
-  background: rgba(124, 231, 215, 0.16);
-  border-color: rgba(83, 132, 165, 0.32);
-  transform: translateY(-1px);
+.v5-theme.v3-live-variant .v2-live-hero-cta-card label {
+  gap: 0.45rem !important;
+}
+
+.v5-theme.v3-live-variant .v2-live-hero-cta-card input {
+  padding-block: 0.82rem !important;
+}
+
+.v5-theme.v3-live-variant .v2-live-hero-cta-card textarea {
+  min-height: 7.25rem !important;
+  padding-block: 0.9rem !important;
+}
+
+@media (max-width: 1023px) {
+  .v5-theme.v3-live-variant .v2-live-hero-grid {
+    align-items: stretch !important;
+  }
+
+  .v5-theme.v3-live-variant .v2-live-hero-cta-shell {
+    align-self: stretch;
+  }
+
+  .v5-theme.v3-live-variant .v2-live-hero-cta-card {
+    min-height: 100%;
+  }
+
+  .v5-theme.v3-live-variant .v2-live-hero-cta-card > .relative {
+    min-height: 100%;
+  }
 }
 
 .v5-theme .v5-hero-marquee-shell {

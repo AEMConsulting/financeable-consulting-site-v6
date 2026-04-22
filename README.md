@@ -49,6 +49,12 @@ Sixth design version (editorial brass theme):
 - entry: `v6/index.html` via `src/v6-main.tsx`
 - route: `/v6/`
 
+Published V7/V1 hero CTA refinement:
+
+- source: `src/AppV7V1.tsx`
+- entry: `v7/v1/index.html` via `src/v7-v1-main.tsx`
+- route: `/v7/v1/`
+
 VBizee-inspired landing page using the V2 color system:
 
 - source: `src/AppVBizee1.tsx`

@@ -706,6 +706,20 @@
   text-transform: none !important;
 }
 
+.v5-theme.v7-v1-live-variant .v3-hero-cta-kicker {
+  color: #f5fbfd !important;
+  display: block !important;
+  font-family: var(--font-display, inherit) !important;
+  font-size: clamp(3.3rem, 5.6vw, 6rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.085em !important;
+  line-height: 0.9 !important;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.18),
+    0 18px 40px rgba(4, 13, 22, 0.22) !important;
+  text-transform: none !important;
+}
+
 .v5-theme.v3-live-variant .v2-live-hero-cta-card label {
   gap: 0.45rem !important;
 }
@@ -719,9 +733,17 @@
   padding-block: 0.9rem !important;
 }
 
+.v5-theme.v7-v1-live-variant .v2-live-hero-cta-card textarea {
+  min-height: 5.75rem !important;
+}
+
 @media (max-width: 1023px) {
   .v5-theme.v3-live-variant .v3-hero-cta-kicker {
     font-size: clamp(2.2rem, 9vw, 4rem) !important;
+  }
+
+  .v5-theme.v7-v1-live-variant .v3-hero-cta-kicker {
+    font-size: clamp(2.55rem, 10vw, 4.35rem) !important;
   }
 
   .v5-theme.v3-live-variant .v2-live-hero-grid {

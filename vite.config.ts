@@ -26,6 +26,7 @@ export default defineConfig({
         v4: resolve(__dirname, 'v4/index.html'),
         v5: resolve(__dirname, 'v5/index.html'),
         v6: resolve(__dirname, 'v6/index.html'),
+        v7v1: resolve(__dirname, 'v7/v1/index.html'),
         VBizee1: resolve(__dirname, 'VBizee1/index.html'),
       },
       output: {

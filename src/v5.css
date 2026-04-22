@@ -737,6 +737,24 @@
   min-height: 5.75rem !important;
 }
 
+.v5-theme.v7-v1-live-variant #journey {
+  display: flex;
+  flex-direction: column;
+}
+
+.v5-theme.v7-v1-live-variant .v7-v1-journey-intro {
+  margin: 0 auto;
+  max-width: 80rem;
+  padding: 9rem 7vw 0;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.v5-theme.v7-v1-live-variant .v7-v1-journey-track {
+  padding-top: 2.5rem !important;
+}
+
 @media (max-width: 1023px) {
   .v5-theme.v3-live-variant .v3-hero-cta-kicker {
     font-size: clamp(2.2rem, 9vw, 4rem) !important;

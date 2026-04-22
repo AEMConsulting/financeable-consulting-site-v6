@@ -13,6 +13,16 @@ function applyV7V1Variant(root: HTMLDivElement | null) {
   }
 
   theme.classList.add('v7-v1-live-variant')
+
+  const main = theme.querySelector<HTMLElement>('main')
+  const whyCunoSection = theme.querySelector<HTMLElement>('#benefits')
+  const outcomesSection = Array.from(theme.querySelectorAll<HTMLElement>('main > section')).find(
+    (section) => section.textContent?.includes('Finance support that delivers operating control.'),
+  )
+
+  if (main && whyCunoSection && outcomesSection && whyCunoSection.previousElementSibling !== outcomesSection) {
+    main.insertBefore(outcomesSection, whyCunoSection)
+  }
 }
 
 function AppV7V1() {

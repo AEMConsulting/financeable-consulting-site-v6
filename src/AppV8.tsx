@@ -1,7 +1,16 @@
 import { useEffect, useRef } from 'react'
 import AppV7V1 from '@/AppV7V1.tsx'
 
-const heroVideoSrc = `${import.meta.env.BASE_URL}media/v8-hero-background.mp4`
+function getHeroVideoSrc() {
+  if (typeof window === 'undefined') {
+    return 'media/v8-hero-background.mp4'
+  }
+
+  const currentPath = window.location.pathname
+  const siteRoot = currentPath.includes('/v8/') ? currentPath.replace(/\/v8\/.*$/, '/') : currentPath
+
+  return new URL(`${siteRoot}media/v8-hero-background.mp4`, window.location.origin).toString()
+}
 
 function applyV8Variant(root: HTMLDivElement | null) {
   if (!root) {
@@ -55,7 +64,7 @@ function applyV8Variant(root: HTMLDivElement | null) {
     video.disablePictureInPicture = true
 
     const source = document.createElement('source')
-    source.src = heroVideoSrc
+    source.src = getHeroVideoSrc()
     source.type = 'video/mp4'
 
     video.appendChild(source)

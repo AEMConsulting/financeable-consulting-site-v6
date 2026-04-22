@@ -75,6 +75,7 @@ function AnimatedCursor({ themeRef }: { themeRef: { current: HTMLDivElement | nu
   const dotRef = useRef<HTMLDivElement | null>(null)
   const currentRef = useRef({ x: 0, y: 0 })
   const targetRef = useRef({ x: 0, y: 0 })
+  const hasPointerRef = useRef(false)
   const backgroundCurrentRef = useRef(idleBackground)
   const backgroundTargetRef = useRef(idleBackground)
   const [isVisible, setIsVisible] = useState(false)
@@ -85,12 +86,15 @@ function AnimatedCursor({ themeRef }: { themeRef: { current: HTMLDivElement | nu
   useEffect(() => {
     const finePointer = window.matchMedia('(pointer: fine)')
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const cursorEnabledClass = 'v5-cursor-enabled'
 
     if (!finePointer.matches) {
       return
     }
 
     let frame = 0
+    document.documentElement.classList.add(cursorEnabledClass)
+    document.body.classList.add(cursorEnabledClass)
 
     const writeBackgroundMotion = (x: number, y: number) => {
       const theme = themeRef.current
@@ -115,14 +119,14 @@ function AnimatedCursor({ themeRef }: { themeRef: { current: HTMLDivElement | nu
     }
 
     const updateCursor = () => {
-      currentRef.current.x += (targetRef.current.x - currentRef.current.x) * 0.16
-      currentRef.current.y += (targetRef.current.y - currentRef.current.y) * 0.16
+      currentRef.current.x += (targetRef.current.x - currentRef.current.x) * 0.42
+      currentRef.current.y += (targetRef.current.y - currentRef.current.y) * 0.42
 
       if (!reduceMotion.matches) {
         backgroundCurrentRef.current.x +=
-          (backgroundTargetRef.current.x - backgroundCurrentRef.current.x) * 0.075
+          (backgroundTargetRef.current.x - backgroundCurrentRef.current.x) * 0.12
         backgroundCurrentRef.current.y +=
-          (backgroundTargetRef.current.y - backgroundCurrentRef.current.y) * 0.075
+          (backgroundTargetRef.current.y - backgroundCurrentRef.current.y) * 0.12
 
         writeBackgroundMotion(backgroundCurrentRef.current.x, backgroundCurrentRef.current.y)
       }
@@ -139,10 +143,27 @@ function AnimatedCursor({ themeRef }: { themeRef: { current: HTMLDivElement | nu
     }
 
     const handlePointerMove = (event: PointerEvent) => {
-      targetRef.current = { x: event.clientX, y: event.clientY }
-      backgroundTargetRef.current = {
+      const nextPoint = { x: event.clientX, y: event.clientY }
+      const nextBackground = {
         x: event.clientX / Math.max(window.innerWidth, 1),
         y: event.clientY / Math.max(window.innerHeight, 1),
+      }
+
+      targetRef.current = nextPoint
+      backgroundTargetRef.current = nextBackground
+
+      if (!hasPointerRef.current) {
+        hasPointerRef.current = true
+        currentRef.current = nextPoint
+        backgroundCurrentRef.current = nextBackground
+
+        if (ringRef.current) {
+          ringRef.current.style.transform = `translate3d(${nextPoint.x}px, ${nextPoint.y}px, 0) translate(-50%, -50%)`
+        }
+
+        if (dotRef.current) {
+          dotRef.current.style.transform = `translate3d(${nextPoint.x}px, ${nextPoint.y}px, 0) translate(-50%, -50%)`
+        }
       }
 
       setIsVisible(true)
@@ -163,6 +184,7 @@ function AnimatedCursor({ themeRef }: { themeRef: { current: HTMLDivElement | nu
     }
 
     const handlePointerLeave = () => {
+      hasPointerRef.current = false
       setIsVisible(false)
       setIsOnLightSurface(false)
       backgroundTargetRef.current = idleBackground
@@ -176,13 +198,17 @@ function AnimatedCursor({ themeRef }: { themeRef: { current: HTMLDivElement | nu
     window.addEventListener('pointermove', handlePointerMove, { passive: true })
     window.addEventListener('pointerdown', handlePointerDown, { passive: true })
     window.addEventListener('pointerup', handlePointerUp, { passive: true })
+    window.addEventListener('blur', handlePointerLeave)
     document.addEventListener('mouseleave', handlePointerLeave)
 
     return () => {
       window.cancelAnimationFrame(frame)
+      document.documentElement.classList.remove(cursorEnabledClass)
+      document.body.classList.remove(cursorEnabledClass)
       window.removeEventListener('pointermove', handlePointerMove)
       window.removeEventListener('pointerdown', handlePointerDown)
       window.removeEventListener('pointerup', handlePointerUp)
+      window.removeEventListener('blur', handlePointerLeave)
       document.removeEventListener('mouseleave', handlePointerLeave)
     }
   }, [themeRef])

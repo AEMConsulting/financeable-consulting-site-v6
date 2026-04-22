@@ -23,19 +23,6 @@ function applyV7V1Variant(root: HTMLDivElement | null) {
   if (main && whyCunoSection && outcomesSection && whyCunoSection.previousElementSibling !== outcomesSection) {
     main.insertBefore(outcomesSection, whyCunoSection)
   }
-
-  const journeySection = theme.querySelector<HTMLElement>('#journey')
-  const desktopJourneyTrack = journeySection?.querySelector<HTMLElement>(':scope > .hidden.lg\\:flex')
-  const desktopJourneyIntro = desktopJourneyTrack?.firstElementChild as HTMLElement | null
-
-  if (journeySection && desktopJourneyTrack && desktopJourneyIntro) {
-    desktopJourneyTrack.classList.add('v7-v1-journey-track')
-    desktopJourneyIntro.classList.add('v7-v1-journey-intro')
-
-    if (desktopJourneyIntro.parentElement === desktopJourneyTrack) {
-      journeySection.insertBefore(desktopJourneyIntro, desktopJourneyTrack)
-    }
-  }
 }
 
 function AppV7V1() {

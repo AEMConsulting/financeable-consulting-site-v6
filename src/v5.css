@@ -697,9 +697,13 @@
 
 .v5-theme.v3-live-variant .v3-hero-cta-kicker {
   color: #eef2f4 !important;
-  font-size: 1rem !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.34em !important;
+  display: block !important;
+  font-family: var(--font-display, inherit) !important;
+  font-size: clamp(2.9rem, 5vw, 5.45rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.07em !important;
+  line-height: 0.92 !important;
+  text-transform: none !important;
 }
 
 .v5-theme.v3-live-variant .v2-live-hero-cta-card label {
@@ -716,6 +720,10 @@
 }
 
 @media (max-width: 1023px) {
+  .v5-theme.v3-live-variant .v3-hero-cta-kicker {
+    font-size: clamp(2.2rem, 9vw, 4rem) !important;
+  }
+
   .v5-theme.v3-live-variant .v2-live-hero-grid {
     align-items: stretch !important;
   }

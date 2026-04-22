@@ -43,7 +43,14 @@ function applyV3Variant(root: HTMLDivElement | null) {
     }
 
     const ctaEyebrow = heroCtaInner?.firstElementChild as HTMLElement | null
+
     ctaEyebrow?.classList.add('v3-hero-cta-kicker')
+
+    heroCtaCard?.querySelectorAll<HTMLElement>('h1, h2, h3').forEach((heading) => {
+      if (heading.textContent?.trim() === 'Book a consultation') {
+        heading.remove()
+      }
+    })
   }
 }
 

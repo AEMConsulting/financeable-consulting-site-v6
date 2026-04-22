@@ -25,7 +25,7 @@ test('design version three keeps v2 structure but updates the hero CTA', async (
 
   await expect(
     page.locator('.v5-hero-consultation-card').getByRole('heading', { name: 'Book a consultation' }),
-  ).toBeVisible()
+  ).toHaveCount(0)
 
   await expect(page.locator('.v5-hero-consultation-card').getByLabel('Your name')).toBeVisible()
   await expect(page.locator('.v5-hero-consultation-card').getByLabel('Work email')).toBeVisible()

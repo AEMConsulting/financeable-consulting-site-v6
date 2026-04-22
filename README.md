@@ -49,6 +49,12 @@ Sixth design version (editorial brass theme):
 - entry: `v6/index.html` via `src/v6-main.tsx`
 - route: `/v6/`
 
+VBizee-inspired landing page using the V2 color system:
+
+- source: `src/AppVBizee1.tsx`
+- entry: `VBizee1/index.html` via `src/vbizee1-main.tsx`
+- route: `/VBizee1/`
+
 ## Stack
 
 - React 19

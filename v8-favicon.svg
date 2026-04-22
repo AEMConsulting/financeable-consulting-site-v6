@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="24" y1="16" x2="232" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1524"/>
+      <stop offset="1" stop-color="#02060D"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="62" y1="40" x2="190" y2="210" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D8EDFF" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#87B9F1" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="78" y1="64" x2="176" y2="184" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7FBFF"/>
+      <stop offset="1" stop-color="#C4DCF8"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#bg)"/>
+  <rect x="30" y="30" width="196" height="196" rx="44" fill="url(#glass)" stroke="rgba(223,238,255,0.34)" stroke-width="2"/>
+  <path d="M173 89C161 76 145 69 124 69C89 69 64 93 64 128C64 163 89 187 124 187C145 187 161 180 173 167" stroke="url(#glow)" stroke-width="22" stroke-linecap="round"/>
+  <path d="M182 78V104" stroke="#E9F5FF" stroke-opacity="0.82" stroke-width="10" stroke-linecap="round"/>
+</svg>

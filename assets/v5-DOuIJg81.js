@@ -1,0 +1,60 @@
+import{a as e}from"./rolldown-runtime-BxHxtpKs.js";import{a as t}from"./gsap-B-IvFtKl.js";import{i as n}from"./motion-xTUgML_O.js";import{n as r}from"./SmoothScrollProvider-n-IUpvoE.js";var i=e(t(),1),a=n(),o={x:.46,y:.24},s=e=>`data:image/svg+xml;charset=UTF-8,${encodeURIComponent(e)}`,c=s(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 820" fill="none">
+  <defs>
+    <linearGradient id="journey-c-stroke" x1="130" y1="110" x2="570" y2="710" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#BDF4EE"/>
+      <stop offset=".46" stop-color="#79E5D7"/>
+      <stop offset="1" stop-color="#2B8D88"/>
+    </linearGradient>
+    <radialGradient id="journey-c-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(350 410) rotate(90) scale(340 300)">
+      <stop stop-color="#8AF0E4" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#8AF0E4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="350" cy="410" r="266" stroke="url(#journey-c-stroke)" stroke-width="72" stroke-linecap="round" stroke-dasharray="1180 520" transform="rotate(24 350 410)"/>
+  <path d="M525 238c-42-55-106-86-184-86-138 0-236 96-236 258 0 162 98 258 236 258 80 0 145-29 190-88" stroke="url(#journey-c-stroke)" stroke-width="44" stroke-linecap="round" opacity=".9"/>
+  <circle cx="350" cy="410" r="314" fill="url(#journey-c-glow)"/>
+</svg>`),l=[s(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" fill="none">
+    <rect x="72" y="42" width="496" height="176" rx="34" fill="#EEF6F8" stroke="#C9DAE2"/>
+    <rect x="106" y="72" width="56" height="56" rx="18" fill="#79E5D7"/>
+    <rect x="106" y="148" width="138" height="36" rx="18" fill="#FFFFFF" stroke="#D1E1E7"/>
+    <path d="M136 100H222" stroke="#16354A" stroke-width="8" stroke-linecap="round"/>
+    <path d="M252 100C286 100 314 128 314 162" stroke="#16354A" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="314" cy="162" r="10" fill="#79E5D7"/>
+    <path d="M352 104H476" stroke="#CBD9DF" stroke-width="4" stroke-dasharray="10 12"/>
+    <path d="M352 154H514" stroke="#CBD9DF" stroke-width="4" stroke-dasharray="10 12"/>
+    <circle cx="500" cy="104" r="10" fill="#D9E7EC"/>
+    <circle cx="534" cy="154" r="10" fill="#D9E7EC"/>
+  </svg>`),s(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" fill="none">
+    <rect x="74" y="42" width="492" height="176" rx="34" fill="#EEF6F8" stroke="#C9DAE2"/>
+    <rect x="108" y="70" width="56" height="56" rx="18" fill="#79E5D7"/>
+    <path d="M110 150H520" stroke="#C7D7DE" stroke-width="4" stroke-dasharray="10 12"/>
+    <path d="M252 74V190" stroke="#C7D7DE" stroke-width="4"/>
+    <path d="M392 86V190" stroke="#C7D7DE" stroke-width="4"/>
+    <circle cx="152" cy="98" r="18" fill="#F8FCFC" stroke="#D1E1E7"/>
+    <circle cx="300" cy="94" r="22" fill="#FFFFFF" stroke="#C9DAE2"/>
+    <circle cx="440" cy="154" r="18" fill="#DDEDF1" stroke="#C9DAE2"/>
+    <rect x="278" y="132" width="120" height="38" rx="19" fill="#FFFFFF" stroke="#D1E1E7"/>
+    <path d="M304 151H370" stroke="#16354A" stroke-width="6" stroke-linecap="round"/>
+  </svg>`),s(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" fill="none">
+    <rect x="72" y="42" width="496" height="176" rx="34" fill="#EEF6F8" stroke="#C9DAE2"/>
+    <rect x="106" y="72" width="56" height="56" rx="18" fill="#79E5D7"/>
+    <path d="M112 100H220" stroke="#79E5D7" stroke-width="8" stroke-linecap="round"/>
+    <path d="M272 72V188" stroke="#C7D6DD" stroke-width="4"/>
+    <path d="M338 102H520" stroke="#CBD9DF" stroke-width="4" stroke-dasharray="10 12"/>
+    <path d="M314 150H546" stroke="#CBD9DF" stroke-width="4" stroke-dasharray="10 12"/>
+    <rect x="150" y="142" width="128" height="38" rx="19" fill="#FFFFFF" stroke="#D1E1E7"/>
+    <rect x="356" y="86" width="132" height="72" rx="24" fill="#FFFFFF" stroke="#C9DAE2"/>
+    <path d="M384 118H450" stroke="#16354A" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="520" cy="102" r="10" fill="#D9E7EC"/>
+    <circle cx="554" cy="150" r="10" fill="#79E5D7"/>
+  </svg>`),s(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" fill="none">
+    <rect x="70" y="42" width="500" height="176" rx="34" fill="#EEF6F8" stroke="#C9DAE2"/>
+    <rect x="102" y="70" width="56" height="56" rx="18" fill="#79E5D7"/>
+    <rect x="96" y="74" width="188" height="92" rx="24" fill="#DDEDF1" stroke="#BFD2DB"/>
+    <rect x="136" y="104" width="206" height="94" rx="24" fill="#FFFFFF" stroke="#D1E1E7"/>
+    <rect x="176" y="132" width="220" height="62" rx="22" fill="#FFFFFF" stroke="#D7E5EA"/>
+    <path d="M204 156H328" stroke="#16354A" stroke-width="6" stroke-linecap="round"/>
+    <path d="M204 176H282" stroke="#79E5D7" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="486" cy="94" r="18" fill="#E4F6F4"/>
+    <circle cx="528" cy="152" r="14" fill="#D8E7EC"/>
+  </svg>`)];function u({themeRef:e}){let t=(0,i.useRef)(null),n=(0,i.useRef)(null),r=(0,i.useRef)({x:0,y:0}),s=(0,i.useRef)({x:0,y:0}),c=(0,i.useRef)(!1),l=(0,i.useRef)(o),u=(0,i.useRef)(o),[d,f]=(0,i.useState)(!1),[p,m]=(0,i.useState)(!1),[h,g]=(0,i.useState)(!1),[_,v]=(0,i.useState)(!1);return(0,i.useEffect)(()=>{let i=window.matchMedia(`(pointer: fine)`),a=window.matchMedia(`(prefers-reduced-motion: reduce)`),d=`v5-cursor-enabled`;if(!i.matches)return;let p=0;document.documentElement.classList.add(d),document.body.classList.add(d);let h=(t,n)=>{let r=e.current;if(!r)return;let i=Math.min(Math.max(t,.08),.92),a=Math.min(Math.max(n,.08),.88),o=78-(i-.5)*28,s=72-(a-.32)*24,c=(i-.5)*72,l=(a-.34)*56;r.style.setProperty(`--v5-mouse-x`,`${(i*100).toFixed(2)}%`),r.style.setProperty(`--v5-mouse-y`,`${(a*100).toFixed(2)}%`),r.style.setProperty(`--v5-mouse-accent-x`,`${o.toFixed(2)}%`),r.style.setProperty(`--v5-mouse-accent-y`,`${s.toFixed(2)}%`),r.style.setProperty(`--v5-mouse-shift-x`,`${c.toFixed(2)}px`),r.style.setProperty(`--v5-mouse-shift-y`,`${l.toFixed(2)}px`)},_=()=>{r.current.x+=(s.current.x-r.current.x)*.42,r.current.y+=(s.current.y-r.current.y)*.42,a.matches||(l.current.x+=(u.current.x-l.current.x)*.12,l.current.y+=(u.current.y-l.current.y)*.12,h(l.current.x,l.current.y)),t.current&&(t.current.style.transform=`translate3d(${r.current.x}px, ${r.current.y}px, 0) translate(-50%, -50%)`),n.current&&(n.current.style.transform=`translate3d(${s.current.x}px, ${s.current.y}px, 0) translate(-50%, -50%)`),p=window.requestAnimationFrame(_)},y=e=>{let i={x:e.clientX,y:e.clientY},a={x:e.clientX/Math.max(window.innerWidth,1),y:e.clientY/Math.max(window.innerHeight,1)};s.current=i,u.current=a,c.current||(c.current=!0,r.current=i,l.current=a,t.current&&(t.current.style.transform=`translate3d(${i.x}px, ${i.y}px, 0) translate(-50%, -50%)`),n.current&&(n.current.style.transform=`translate3d(${i.x}px, ${i.y}px, 0) translate(-50%, -50%)`)),f(!0);let o=e.target;if(o instanceof Element){let e=!!o.closest(`a, button, input, textarea, select, label, [role="button"]`),t=!!o.closest(`#features, #benefits, #faq`);m(t=>t===e?t:e),v(e=>e===t?e:t)}},b=()=>{c.current=!1,f(!1),v(!1),u.current=o},x=()=>g(!0),S=()=>g(!1);return h(o.x,o.y),p=window.requestAnimationFrame(_),window.addEventListener(`pointermove`,y,{passive:!0}),window.addEventListener(`pointerdown`,x,{passive:!0}),window.addEventListener(`pointerup`,S,{passive:!0}),window.addEventListener(`blur`,b),document.addEventListener(`mouseleave`,b),()=>{window.cancelAnimationFrame(p),document.documentElement.classList.remove(d),document.body.classList.remove(d),window.removeEventListener(`pointermove`,y),window.removeEventListener(`pointerdown`,x),window.removeEventListener(`pointerup`,S),window.removeEventListener(`blur`,b),document.removeEventListener(`mouseleave`,b)}},[e]),(0,a.jsxs)(a.Fragment,{children:[(0,a.jsx)(`div`,{ref:t,"aria-hidden":`true`,className:`v5-cursor-ring${d?` is-visible`:``}${p?` is-interactive`:``}${h?` is-pressed`:``}${_?` is-on-light`:``}`}),(0,a.jsx)(`div`,{ref:n,"aria-hidden":`true`,className:`v5-cursor-dot${d?` is-visible`:``}${p?` is-interactive`:``}${h?` is-pressed`:``}${_?` is-on-light`:``}`})]})}function d(){let e=(0,i.useRef)(null);return(0,i.useEffect)(()=>{let t=e.current;if(!t)return;let n=()=>{let e=t.querySelector(`header a[href="#top"]`);if(e){e.classList.add(`v5-brand-lockup`),e.querySelector(`:scope > div:first-child`)?.classList.add(`v5-brand-icon`);let t=e.querySelector(`:scope > div:last-child`),n=t?.querySelector(`:scope > div:first-child`),r=t?.querySelector(`:scope > div:last-child`);t?.classList.add(`v5-brand-text`),n&&n.textContent!==`Cuno Consulting`&&(n.textContent=`Cuno Consulting`),r?.textContent&&(r.textContent=``)}t.querySelectorAll(`div`).forEach(e=>{if(e.textContent?.trim()!==`Cuno`)return;let t=e.nextElementSibling;!(t instanceof HTMLElement)||t.textContent?.trim()!==`Senior finance support`||(e.textContent=`Cuno Consulting`,e.classList.add(`v5-mobile-brand-title`),t.textContent=``)}),t.querySelectorAll(`img`).forEach(e=>{let t=e.getAttribute(`src`);t?.startsWith(`./media/voxr/`)&&e.setAttribute(`src`,t.replace(`./media/voxr/`,`../media/voxr/`))}),t.querySelectorAll(`[style]`).forEach(e=>{let t=e.style.backgroundImage;t.includes(`./media/voxr/`)&&(e.style.backgroundImage=t.replaceAll(`./media/voxr/`,`../media/voxr/`))});let n=t.querySelector(`main section:first-of-type .surface-glass .text-sm.text-lilac`);n&&n.textContent!==`Reporting`&&(n.textContent=`Reporting`),t.querySelector(`#contact`)?.closest(`.gradient-outline`)?.classList.add(`v5-hero-consultation-card`),t.querySelector(`#contact`)?.closest(`.relative`)?.classList.add(`v5-hero-consultation-wrap`),t.querySelector(`.marquee-track`)?.parentElement?.classList.add(`v5-hero-marquee-shell`),t.querySelectorAll(`#features article.feature-card`).forEach(e=>{e.classList.add(`v5-feature-card`),e.querySelector(`.mt-6.text-sm.uppercase`)?.classList.add(`v5-feature-tag`),e.querySelectorAll(`.rounded-\\[16px\\]`).forEach(e=>{e.classList.add(`v5-feature-bullet`)})}),t.querySelector(`#journey .hidden.lg\\:flex`)?.firstElementChild?.classList.add(`v5-journey-intro`),t.querySelectorAll(`#journey article`).forEach(e=>{e.textContent?.includes(`Ready for clear monthly numbers`)&&e.classList.add(`v5-journey-ready-card`)}),t.querySelector(`#journey .lg\\:hidden .swiper`)?.classList.add(`v5-journey-mobile-swiper`),t.querySelector(`#journey .lg\\:hidden .mt-8.flex.items-center.justify-center.gap-4`)?.classList.add(`v5-journey-mobile-controls`),t.querySelectorAll(`#journey .journey-logo, #journey img[src*="frame16"]`).forEach(e=>{e.setAttribute(`src`,c),e.classList.add(`v5-journey-mark`)}),t.querySelector(`#benefits .mt-14.flex.items-center.justify-end.gap-4`)?.classList.add(`v5-benefits-controls`),t.querySelector(`#benefits .benefits-swiper`)?.classList.add(`v5-benefits-mobile-swiper`),t.querySelectorAll(`#benefits article`).forEach((e,t)=>{e.classList.add(`v5-benefit-card`),e.querySelector(`.rounded-\\[18px\\]`)?.classList.add(`v5-benefit-impact`);let n=e.querySelector(`img`);n?.classList.add(`v5-benefit-art`),n&&l[t]&&n.setAttribute(`src`,l[t])}),t.querySelector(`main > section:last-of-type .mt-10.flex.flex-wrap.justify-center.gap-3`)?.remove();let r=Array.from(t.querySelectorAll(`main section`)).find(e=>e.textContent?.includes(`Finance support that delivers operating control.`));r&&(r.classList.add(`v5-outcomes-section`),r.querySelector(`:scope > .mx-auto > .mt-14.grid > div:first-child`)?.classList.add(`v5-outcomes-stats-grid`),r.querySelectorAll(`:scope > .mx-auto > .mt-14.grid > div:first-child > div`).forEach(e=>{e.classList.add(`v5-outcomes-stat-card`)}))};n();let r=new MutationObserver(()=>{window.requestAnimationFrame(n)});return r.observe(t,{childList:!0,subtree:!0}),()=>{r.disconnect()}},[]),(0,a.jsxs)(a.Fragment,{children:[(0,a.jsx)(u,{themeRef:e}),(0,a.jsx)(`div`,{ref:e,className:`v5-theme`,children:(0,a.jsx)(r,{})})]})}export{d as t};
